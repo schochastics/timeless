@@ -30,3 +30,14 @@ remotes::install_github("schochastics/chronos")
 pak::pak("schochastics/chronos")
 ```
 
+```{r}
+library(chronos)
+```
+
+## Formats
+
+The accepted formats are 
+```{r}
+bench_date
+chronos(bench_date)
+```
