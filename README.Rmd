@@ -36,7 +36,7 @@ library(chronos)
 
 ## Formats
 
-chronos understands 97 different date(time) formats.
+chronos understands 93 different date(time) formats.
 ```{r}
 bench_date
 ```
