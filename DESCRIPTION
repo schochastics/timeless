@@ -11,6 +11,8 @@ Authors@R:
       person("Eric", "Sheppard", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
       person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"), )
 Description: Fast general purpose date/time converter. The package wraps the Rust crate 'dateparser'.
+URL: https://github.com/schochastics/chronos, https://schochastics.github.io/chronos/
+BugReports: https://github.com/schochastics/chronos/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
