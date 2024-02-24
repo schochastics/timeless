@@ -122,7 +122,7 @@ bench_date <- c(
 usethis::use_data(bench_date, overwrite = TRUE)
 
 
-formats_datetime <- c(
+formats_datetime <- unique(c(
     "%Y-%m-%d %H:%M:%S", "%Y-%m-%e %H:%M:%S", "%Y-%m-%d %H%M%S",
     "%Y-%m-%e %H%M%S", "%Y/%m/%d %H:%M:%S", "%Y/%m/%e %H:%M:%S",
     "%Y%m%d %H%M%S", "%Y%m%d %H:%M:%S", "%m/%d/%Y %H:%M:%S", "%m/%e/%Y %H:%M:%S",
@@ -139,8 +139,11 @@ formats_datetime <- c(
     "%B-%d-%Y %H:%M:%S", "%B-%e-%Y %H:%M:%S", "%d.%B.%Y %H:%M:%S",
     "%e.%B.%Y %H:%M:%S", "%a %b %d %H:%M:%S%F %Y", "%a %b %e %H:%M:%S%F %Y",
     "%a %d %b %Y %H:%M:%S%F", "%a %e %b %Y %H:%M:%S%F", "%Y-%m-%d %H:%M:%S%Z",
-    "%Y-%m-%e %H:%M:%S%Z", "%a %b %d %H:%M:%S%F xxx %Y", "%a %b %e %H:%M:%S%F xxx %Y"
-)
+    "%Y-%m-%e %H:%M:%S%Z", "%a %b %d %H:%M:%S%F xxx %Y", "%a %b %e %H:%M:%S%F xxx %Y",
+    "%Y.%m.%d %H:%M", "epoch", "%B %d, %Y %H:%M", "%d %B %Y %I:%M%p",
+    "%A, %d %B %Y %H:%M", "%Y%m%d%H%M", "%d-%m-%Y %H:%M", "%m/%d/%Y %I:%M %p",
+    "%Y-%m-%d %H:%M:%S", "%Y/%m/%d %H:%M:%S", "%d %b %Y %H:%M:%S"
+))
 
 formats_date <- c(
     "%Y-%m-%d", "%Y-%m-%e", "%Y%m%d", "%m/%d/%Y", "%m/%e/%Y", "%m-%d-%Y",

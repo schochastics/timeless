@@ -37,19 +37,26 @@ chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S
     idx <- res == "not found"
     if (!any(idx)) {
         return(res)
-    } else {
-        tmp <- parse_datetime(x[idx], formats, out_datetime)
-        res[idx] <- tmp
-        idx <- res == "not found"
-        if (!any(idx)) {
-            return(res)
-        } else {
-            tmp <- parse_date(x[idx], formats, out_date)
-            res[idx] <- tmp
-            res[res == "not found"] <- NA
-            return(res)
-        }
     }
+
+    tmp <- parse_datetime(x[idx], formats, out_datetime)
+    res[idx] <- tmp
+    idx <- is.na(res)
+    if (!any(idx)) {
+        return(res)
+    }
+
+    tmp <- parse_date(x[idx], formats, out_date)
+    res[idx] <- tmp
+    res[is.na(res)] <- NA_character_
+    if (!any(idx)) {
+        return(res)
+    }
+
+    tmp <- parse_epoch(x[idx], out_datetime)
+    res[idx] <- tmp
+    res[is.na(res)] <- NA_character_
+    return(res)
 }
 
 #' Parse datetime from strings using different formats
@@ -61,6 +68,7 @@ parse_datetime <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S"
         formats <- formats_lst[["datetime"]]
     }
     res <- parse_datetime_rs(x, formats, out_datetime)
+    res[res == "not found"] <- NA_character_
     res
 }
 
@@ -73,5 +81,16 @@ parse_date <- function(x, formats = NULL, out_date = "%Y-%m-%d") {
         formats <- formats_lst[["date"]]
     }
     res <- parse_date_rs(x, formats, out_date)
+    res[res == "not found"] <- NA_character_
+    res
+}
+
+#' Parse datetime from epoch
+#' @inheritParams chronos
+#' @return character vector of parsed dates.
+#' @export
+parse_epoch <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+    res <- parse_epoch_rs(x, out_datetime)
+    res[res == "not found"] <- NA_character_
     res
 }

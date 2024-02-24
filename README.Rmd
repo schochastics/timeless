@@ -50,9 +50,18 @@ transformed into a `date` or `POSIXct` object by any standard datetime R functio
 ```{r}
 chronos(bench_date)
 ```
+## Functions
 
+`chronos()` is the powerhouse of the package and tries as hard as possible to parse every input.
+under the hood it calls three functions which can also be used in isolation:
 
-# other packages
+- `parse_datetime()`: a fast datetime parser that tries several different formats until it can parse the input
+
+- `parse_date()`: a fast date parser that tries several different formats until it can parse the input
+
+- `parse_epoch()`: a fast epoch timestamp parser
+
+## other packages
 
 [anytime](https://github.com/eddelbuettel/anytime) is the most accepted general purpose date(time) converter.
 
