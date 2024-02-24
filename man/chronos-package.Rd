@@ -3,13 +3,13 @@
 \docType{package}
 \name{chronos-package}
 \alias{chronos-package}
-\title{chronos: What the Package Does (One Line, Title Case)}
+\title{chronos: General purpose date(time) parser}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-What the package does (one paragraph).
+General purpose date(time) parser. The package wraps the Rust crate 'dateparser'.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: David Schoch \email{david@schochastics.net} (\href{https://orcid.org/0000-0003-2952-4812}{ORCID})
 
 }
