@@ -13,6 +13,26 @@
 #' chronos(bench_date)
 #' @export
 chronos <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+    UseMethod("chronos")
+}
+
+#' @S3method chronos factor
+#' @export
+chronos.factor <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+    x <- as.character(x)
+    NextMethod("chronos")
+}
+
+#' @S3method chronos integer
+#' @export
+chronos.integer <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+    x <- as.character(x)
+    NextMethod("chronos")
+}
+
+#' @S3method chronos default
+#' @export
+chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
     res <- parse_guess_rs(x)
     idx <- res == "not found"
     if (!any(idx)) {
