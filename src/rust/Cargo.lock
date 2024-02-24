@@ -74,6 +74,7 @@ dependencies = [
 name = "chronos"
 version = "0.1.0"
 dependencies = [
+ "chrono",
  "dateparser",
  "extendr-api",
 ]

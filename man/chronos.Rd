@@ -2,7 +2,7 @@
 % Please edit documentation in R/chronos.R
 \name{chronos}
 \alias{chronos}
-\title{Parse Date from input data}
+\title{General purpose parser for Dates from input data}
 \usage{
 chronos(x)
 }
@@ -13,9 +13,12 @@ chronos(x)
 A character vector which can be transformed to \code{POSIXct} or date
 }
 \description{
-This function uses the dateparser crate from Rust to parse datetimes (and
+This function uses the dateparser and chrono crates from Rust to parse datetimes (and
 dates) from strings.
 }
 \examples{
 chronos(bench_date)
+}
+\seealso{
+\link{parse_datetime} and \link{parse_date} if you need more control over formatting
 }

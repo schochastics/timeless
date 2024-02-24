@@ -1,3 +1,4 @@
-# chronos (development version)
+# chronos (0.1.0.9999)
 
-* Initial version.
+- implemented `chronos()` as general purpose parser
+- implemented `parse_datetime()` and `parse_date()` for more control over formatting

@@ -11,7 +11,11 @@
 #' @useDynLib chronos, .registration = TRUE
 NULL
 
-chronos_rs <- function(times) .Call(wrap__chronos_rs, times)
+parse_guess_rs <- function(times) .Call(wrap__parse_guess_rs, times)
+
+parse_datetime_rs <- function(times, formats, out_format) .Call(wrap__parse_datetime_rs, times, formats, out_format)
+
+parse_date_rs <- function(times, formats, out_format) .Call(wrap__parse_date_rs, times, formats, out_format)
 
 
 # nolint end

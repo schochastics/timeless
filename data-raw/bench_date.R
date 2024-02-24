@@ -120,3 +120,39 @@ bench_date <- c(
     "2014年04月08日"
 )
 usethis::use_data(bench_date, overwrite = TRUE)
+
+
+formats_datetime <- c(
+    "%Y-%m-%d %H:%M:%S", "%Y-%m-%e %H:%M:%S", "%Y-%m-%d %H%M%S",
+    "%Y-%m-%e %H%M%S", "%Y/%m/%d %H:%M:%S", "%Y/%m/%e %H:%M:%S",
+    "%Y%m%d %H%M%S", "%Y%m%d %H:%M:%S", "%m/%d/%Y %H:%M:%S", "%m/%e/%Y %H:%M:%S",
+    "%m-%d-%Y %H:%M:%S", "%m-%e-%Y %H:%M:%S", "%Y-%b-%d %H:%M:%S",
+    "%Y-%b-%e %H:%M:%S", "%Y/%b/%d %H:%M:%S", "%Y/%b/%e %H:%M:%S",
+    "%Y%b%d %H%M%S%F", "%Y%b%e %H%M%S%F", "%Y%b%d %H:%M:%S%F", "%Y%b%e %H:%M:%S%F",
+    "%b/%d/%Y %H:%M:%S", "%b/%e/%Y %H:%M:%S", "%b-%d-%Y %H:%M:%S",
+    "%b-%e-%Y %H:%M:%S", "%d.%b.%Y %H:%M:%S", "%e.%b.%Y %H:%M:%S",
+    "%d%b%Y %H%M%S", "%e%b%Y %H%M%S", "%d%b%Y %H:%M:%S", "%e%b%Y %H:%M:%S",
+    "%d-%b-%Y %H%M%S", "%e-%b-%Y %H%M%S", "%d-%b-%Y %H:%M:%S", "%d-%b-%Y %H:%M:%S",
+    "%Y-%B-%d %H:%M:%S", "%Y-%B-%e %H:%M:%S", "%Y/%B/%d %H:%M:%S",
+    "%Y/%B/%e %H:%M:%S", "%Y%B%d %H%M%S", "%Y%B%e %H%M%S", "%Y%B%d %H:%M:%S",
+    "%Y%B%e %H:%M:%S", "%B/%d/%Y %H:%M:%S", "%B/%e/%Y %H:%M:%S",
+    "%B-%d-%Y %H:%M:%S", "%B-%e-%Y %H:%M:%S", "%d.%B.%Y %H:%M:%S",
+    "%e.%B.%Y %H:%M:%S", "%a %b %d %H:%M:%S%F %Y", "%a %b %e %H:%M:%S%F %Y",
+    "%a %d %b %Y %H:%M:%S%F", "%a %e %b %Y %H:%M:%S%F", "%Y-%m-%d %H:%M:%S%Z",
+    "%Y-%m-%e %H:%M:%S%Z", "%a %b %d %H:%M:%S%F xxx %Y", "%a %b %e %H:%M:%S%F xxx %Y"
+)
+
+formats_date <- c(
+    "%Y-%m-%d", "%Y-%m-%e", "%Y%m%d", "%m/%d/%Y", "%m/%e/%Y", "%m-%d-%Y",
+    "%m-%e-%Y", "%Y-%b-%d", "%Y-%b-%e", "%Y%b%d", "%Y%b%e", "%b/%d/%Y",
+    "%b/%e/%Y", "%b-%d-%Y", "%b-%e-%Y", "%d%b%Y", "%e%b%Y", "%d-%b-%Y",
+    "%e-%b-%Y", "%Y-%B-%d", "%Y-%B-%e", "%Y%B%d", "%Y%B%e", "%B/%d/%Y",
+    "%B/%e/%Y", "%B-%d-%Y", "%B-%e-%Y"
+)
+formats_lst <- list(datetime = formats_datetime, date = formats_date)
+usethis::use_data(formats_lst, internal = TRUE, overwrite = TRUE)
+
+
+# fmt <- stringr::str_remove_all(anytime::getFormats(), "%f")
+# bench_anytime <- format(Sys.time(), format = fmt)
+# bench_anytime <- unique(bench_anytime)

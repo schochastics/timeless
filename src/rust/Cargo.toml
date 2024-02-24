@@ -10,3 +10,4 @@ name = 'chronos'
 [dependencies]
 extendr-api = '*'
 dateparser = '0.2'
+chrono = '0.4'
