@@ -80,4 +80,4 @@ to a `POSIXct`. This could be done efficiently with [fasttime](https://github.co
 
 **Disclaimer**:  
 While it might seem that `chronos` has an edge over `anytime`, it is far less battle tested and
-robust. I am grateul for everyone who can take the package for a spin and report issues.
+robust. I am grateful for everyone who can take the package for a spin and report issues.
