@@ -16,9 +16,11 @@ knitr::opts_chunk$set(
 # chronos <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/chronos)](https://CRAN.R-project.org/package=chronos)
 <!-- badges: end -->
 
-A general purpose date(time) converter using the Rust crate [dateparser](https://crates.io/crates/dateparser).
+A fast general purpose date/time converter using the Rust crate [dateparser](https://crates.io/crates/dateparser) and [chrono](https://crates.io/crates/chrono).
 
 ## Installation
 
@@ -36,13 +38,15 @@ library(chronos)
 
 ## Formats
 
-chronos understands 93 different date(time) formats.
+chronos understands 93 different date(time) formats out of the box
 ```{r}
 bench_date
 ```
+plus all formats supported by [anytime](https://github.com/eddelbuettel/anytime).
 
-`chronos()` parses each date into a character with a form that can be easily
-transformed into a `date` or `POSIXct` object by any standard datetime R package. 
+`chronos()` parses each date(time) into a character with a form that can be easily
+transformed into a `date` or `POSIXct` object by any standard datetime R function.
+(**This will eventually be included in chronos**) 
 ```{r}
 chronos(bench_date)
 ```
@@ -52,7 +56,7 @@ chronos(bench_date)
 
 [anytime](https://github.com/eddelbuettel/anytime) is the most accepted general purpose date(time) converter.
 
-While it does not recognize all accepted formats of chronos out of the box
+It does not recognize all accepted formats of chronos out of the box
 ```{r}
 dplyr::coalesce(
     anytime::anytime(bench_date),
@@ -60,16 +64,10 @@ dplyr::coalesce(
 )
 ```
 
-It does recognize other formats that chronos does not.
-```{r}
-anytime::anydate("20240224")
-chronos("20240224")
-```
+The list of formats supported out-of-the-box can be retrieved with `anytime::getFormats()`.
+`chronos` implements these formats natively too.
 
-The list of formats supported out-of-the-box can be retrieved with `anytime::getFormats()`
-
-
-Concerning runtime, `chronos` is quite a bit faster.
+Concerning runtime, `chronos` seems to be quite a bit faster than `anytime`.
 ```{r}
 microbenchmark::microbenchmark(
     chronos(bench_date),

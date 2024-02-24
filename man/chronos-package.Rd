@@ -3,13 +3,9 @@
 \docType{package}
 \name{chronos-package}
 \alias{chronos-package}
-\title{chronos: General purpose date(time) parser}
+\title{chronos: Fast General Purpose Date/Time Converter}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-General purpose date(time) parser. The package wraps the Rust crate 'dateparser'.
-}
-\author{
-\strong{Maintainer}: David Schoch \email{david@schochastics.net} (\href{https://orcid.org/0000-0003-2952-4812}{ORCID})
-
+Fast general purpose date/time converter. The package wraps the Rust crate 'dateparser'.
 }

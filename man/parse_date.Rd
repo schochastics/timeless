@@ -4,15 +4,15 @@
 \alias{parse_date}
 \title{Parse date from strings using different formats}
 \usage{
-parse_date(x, formats, out_format = "\%Y-\%m-\%d")
+parse_date(x, formats = NULL, out_date = "\%Y-\%m-\%d")
 }
 \arguments{
 \item{x}{A vector of type character with date(time) expressions to be parsed and converted.}
 
 \item{formats}{character vector of formats to try out (see \link[base:strptime]{base::strptime}).
-If missing, uses a set of predefined formats from the anytime package.}
+If NULL, uses a set of predefined formats mostly taken from the anytime package.}
 
-\item{out_format}{character defining the format of the parsed strings}
+\item{out_date}{character defining the date format of the parsed strings}
 }
 \value{
 character vector of parsed dates.
