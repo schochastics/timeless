@@ -77,5 +77,5 @@ microbenchmark::microbenchmark(
 )
 ```
 
-Note howver that chronos does return only a character vector that needs to be converted
+Note however that chronos does return only a character vector that needs to be converted
 to a `POSIXct`. This could be done efficiently with [fasttime](https://github.com/s-u/fasttime) 
