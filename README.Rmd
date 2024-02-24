@@ -36,8 +36,13 @@ library(chronos)
 
 ## Formats
 
-The accepted formats are 
+chronos understands 97 different date(time) formats.
 ```{r}
 bench_date
+```
+
+`chronos()` parses each date into a character with a form that can be easily
+transformed into a `date` or `POSIXct` object by any standard datetime R package. 
+```{r}
 chronos(bench_date)
 ```
