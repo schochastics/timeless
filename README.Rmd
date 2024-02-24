@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-Parse strings with arbitrary dates into datetime objects using the Rust crate [dateparser](https://crates.io/crates/dateparser).
+A general purpose date(time) converter using the Rust crate [dateparser](https://crates.io/crates/dateparser).
 
 ## Installation
 
