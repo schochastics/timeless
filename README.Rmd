@@ -66,7 +66,7 @@ anytime::anydate("20240224")
 chronos("20240224")
 ```
 
-The list of out-of-the-box supported formats can be retrieved with `anytime::getFormats()`
+The list of formats supported out-of-the-box can be retrieved with `anytime::getFormats()`
 
 
 Concerning runtime, `chronos` is quite a bit faster.
