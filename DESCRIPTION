@@ -1,10 +1,16 @@
 Package: chronos
-Title: General purpose date(time) parser
-Version: 0.0.0.9000
+Title: Fast General Purpose Date/Time Converter
+Version: 0.1.0.9999
 Authors@R: 
-    person("David", "Schoch", , "david@schochastics.net", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0003-2952-4812"))
-Description: General purpose date(time) parser. The package wraps the Rust crate 'dateparser'.
+    c(person("David", "Schoch", , "david@schochastics.net", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2952-4812")),
+      person("Rollie", "Ma", role = c("ctb", "cph"),comment = "author of dateparser : <https://github.com/waltzofpearls/dateparser>"),
+      person("Brandon W.", "Maister", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
+      person("Dirkjan", "Ochtman", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
+      person("Seonghoon", "Kang", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
+      person("Eric", "Sheppard", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
+      person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"), )
+Description: Fast general purpose date/time converter. The package wraps the Rust crate 'dateparser'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
