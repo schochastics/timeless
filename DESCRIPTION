@@ -9,7 +9,7 @@ Authors@R:
       person("Dirkjan", "Ochtman", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
       person("Seonghoon", "Kang", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
       person("Eric", "Sheppard", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
-      person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"), )
+      person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"))
 Description: Fast general purpose date/time converter. The package wraps the Rust crate 'dateparser'.
 URL: https://github.com/schochastics/chronos, https://schochastics.github.io/chronos/
 BugReports: https://github.com/schochastics/chronos/issues
@@ -21,4 +21,3 @@ Config/rextendr/version: 0.3.1
 Depends: 
     R (>= 2.10)
 LazyData: true
-URL: https://schochastics.github.io/chronos/

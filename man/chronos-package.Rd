@@ -9,3 +9,26 @@
 
 Fast general purpose date/time converter. The package wraps the Rust crate 'dateparser'.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/schochastics/chronos}
+  \item \url{https://schochastics.github.io/chronos/}
+  \item Report bugs at \url{https://github.com/schochastics/chronos/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: David Schoch \email{david@schochastics.net} (\href{https://orcid.org/0000-0003-2952-4812}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Rollie Ma (author of dateparser : <https://github.com/waltzofpearls/dateparser>) [contributor, copyright holder]
+  \item Brandon W. Maister (author of chronos : <https://github.com/chronotope/chrono>) [contributor, copyright holder]
+  \item Dirkjan Ochtman (author of chronos : <https://github.com/chronotope/chrono>) [contributor, copyright holder]
+  \item Seonghoon Kang (author of chronos : <https://github.com/chronotope/chrono>) [contributor, copyright holder]
+  \item Eric Sheppard (author of chronos : <https://github.com/chronotope/chrono>) [contributor, copyright holder]
+  \item Paul Dicker (author of chronos : <https://github.com/chronotope/chrono>) [contributor, copyright holder]
+}
+
+}
