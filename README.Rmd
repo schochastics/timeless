@@ -66,6 +66,11 @@ anytime::anydate("20240224")
 chronos("20240224")
 ```
 
+The list of out-of-the-box supported formats can be retrieved with 
+```{r}
+anytime::getFormats()
+```
+
 `chronos` is quite a bit faster though.
 ```{r}
 microbenchmark::microbenchmark(
