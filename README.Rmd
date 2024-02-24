@@ -52,7 +52,7 @@ chronos(bench_date)
 
 [anytime](https://github.com/eddelbuettel/anytime) is the most accepted general purpose date(time) converter.
 
-While it does not recognize all accepted formats of chronos
+While it does not recognize all accepted formats of chronos out of the box
 ```{r}
 dplyr::coalesce(
     anytime::anytime(bench_date),
@@ -64,4 +64,12 @@ It does recognize other formats that chronos does not.
 ```{r}
 anytime::anydate("20240224")
 chronos("20240224")
+```
+
+`chronos` is quite a bit faster though.
+```{r}
+microbenchmark::microbenchmark(
+    chronos(bench_date),
+    anytime::anytime(bench_date)
+)
 ```
