@@ -46,3 +46,22 @@ transformed into a `date` or `POSIXct` object by any standard datetime R package
 ```{r}
 chronos(bench_date)
 ```
+
+
+# other packages
+
+[anytime](https://github.com/eddelbuettel/anytime) is the most accepted general purpose date(time) converter.
+
+While it does not recognize all accepted formats of chronos
+```{r}
+dplyr::coalesce(
+    anytime::anytime(bench_date),
+    anytime::anydate(bench_date)
+)
+```
+
+It does recognize other formats that chronos does not.
+```{r}
+anytime::anydate("20240224")
+chronos("20240224")
+```
