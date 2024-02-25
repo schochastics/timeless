@@ -45,7 +45,7 @@ chronos.character <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:
 
     tmp <- parse_date(x[idx], formats, out_date)
     res[idx] <- tmp
-    res[is.na(res)] <- NA_character_
+    idx <- is.na(res)
     if (!any(idx)) {
         return(res)
     }

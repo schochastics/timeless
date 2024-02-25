@@ -145,13 +145,15 @@ formats_datetime <- unique(c(
     "%Y-%m-%d %H:%M:%S", "%Y/%m/%d %H:%M:%S", "%d %b %Y %H:%M:%S"
 ))
 
-formats_date <- c(
+formats_date <- unique(c(
     "%Y-%m-%d", "%Y-%m-%e", "%Y%m%d", "%m/%d/%Y", "%m/%e/%Y", "%m-%d-%Y",
     "%m-%e-%Y", "%Y-%b-%d", "%Y-%b-%e", "%Y%b%d", "%Y%b%e", "%b/%d/%Y",
     "%b/%e/%Y", "%b-%d-%Y", "%b-%e-%Y", "%d%b%Y", "%e%b%Y", "%d-%b-%Y",
     "%e-%b-%Y", "%Y-%B-%d", "%Y-%B-%e", "%Y%B%d", "%Y%B%e", "%B/%d/%Y",
-    "%B/%e/%Y", "%B-%d-%Y", "%B-%e-%Y"
-)
+    "%B/%e/%Y", "%B-%d-%Y", "%B-%e-%Y", "%d/%m/%Y", "%d %B %Y", "%Y-%m-%d", "%Y/%m/%d", "%B %d, %Y",
+    "%Y.%m.%d", "%A, %d %B %Y", "%I:%M %p %B %d, %Y", "%d-%b-%Y",
+    "%m/%d/%Y"
+))
 formats_lst <- list(datetime = formats_datetime, date = formats_date)
 usethis::use_data(formats_lst, internal = TRUE, overwrite = TRUE)
 
