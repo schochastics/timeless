@@ -1,0 +1,115 @@
+---
+title: "Benchmarking chronos and anytime"
+format: gfm
+---
+
+```{r}
+#| label: load_pkgs
+library(chronos)
+library(anytime)
+```
+
+The benchmark is done with three datasets that contain a variety of different date(time) formats.
+
+```{r}
+#| label: read_data
+
+bench_datetimes <- readLines("datetime1000.txt")
+head(bench_datetimes)
+bench_epochs <- readLines("epoch500.txt")
+head(bench_epochs)
+bench_dates <- readLines("dates500.txt")
+head(bench_dates)
+bench <- c(bench_datetimes, bench_epochs, bench_dates)
+```
+
+## Ability to parse
+
+This benchmark just checks **if** something was parsed and does **not** say if the result is actually correct.
+
+```{r}
+#| label: parse_ability
+sum_na <- function(x) sum(is.na(x))
+data.frame(
+    type = c("datetimes", "epochs", "dates", "all"),
+    chronos = c(
+        sum_na(chronos(bench_datetimes)),
+        sum_na(chronos(bench_epochs)),
+        sum_na(chronos(bench_dates, out_format = "date")),
+        sum_na(chronos(bench))
+    ),
+    anytime = c(
+        sum_na(anytime(bench_datetimes)),
+        sum_na(anytime(as.numeric(bench_epochs))),
+        sum_na(anydate(bench_dates)),
+        sum_na(anytime(bench))
+    )
+)
+```
+
+When epoch times are encoded as characters (which happens when all data is put together in one vector), then anytime fails to parse most of the epoch times.
+
+## Runtime
+
+```{r}
+#| label: fast_chronos
+
+fast_chronos <- function(x, out_format = "datetime") {
+    res <- chronos(x, out_format = "character")
+    if (out_format == "datetime") {
+        return(fasttime::fastPOSIXct(res))
+    } else {
+        return(fasttime::fastDate(res))
+    }
+}
+```
+
+### Full data
+```{r}
+#| label: bench_all
+mb <- microbenchmark::microbenchmark(
+    chronos = chronos(bench),
+    fast_chronos = fast_chronos(bench),
+    anytime = anytime(bench),
+    times = 10L
+)
+ggplot2::autoplot(mb)
+```
+
+### datetime
+```{r}
+#| label: bench_datetime
+mb <- microbenchmark::microbenchmark(
+    chronos = chronos(bench_datetimes),
+    fast_chronos = fast_chronos(bench_datetimes),
+    anytime = anytime(bench_datetimes),
+    times = 10L
+)
+ggplot2::autoplot(mb)
+```
+
+### epoch
+```{r}
+#| label: bench_epoch
+bench_epochs_num <- as.integer(bench_epochs)
+mb <- microbenchmark::microbenchmark(
+    chronos = chronos(bench_epochs_num),
+    fast_chronos = fast_chronos(bench_epochs_num),
+    anytime = anytime(bench_epochs_num),
+    posix = as.POSIXct(bench_epochs_num),
+    times = 10L
+)
+ggplot2::autoplot(mb)
+```
+
+### date
+```{r}
+#| label: bench_date
+mb <- microbenchmark::microbenchmark(
+    chronos = chronos(bench_date, out_format = "date"),
+    fast_chronos = fast_chronos(bench_date, out_format = "date"),
+    anytime = anydate(bench_date),
+    times = 10L
+)
+ggplot2::autoplot(mb)
+```

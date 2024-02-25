@@ -25,8 +25,16 @@ chronos.factor <- function(x, formats = NULL, tz = "", out_format = "datetime") 
 
 #' @export
 chronos.integer <- function(x, formats = NULL, tz = "", out_format = "datetime") {
-    x <- as.character(x)
-    NextMethod("chronos")
+    res <- parse_epoch(x)
+    res[is.na(res)] <- NA_character_
+    .return_parsed(res, tz = tz, format = out_format)
+}
+
+#' @export
+chronos.numeric <- function(x, formats = NULL, tz = "", out_format = "datetime") {
+    res <- parse_epoch(x)
+    res[is.na(res)] <- NA_character_
+    .return_parsed(res, tz = tz, format = out_format)
 }
 
 #' @export
@@ -60,7 +68,7 @@ chronos.character <- function(x, formats = NULL, tz = "", out_format = "datetime
 
 #' @export
 chronos.default <- function(x, formats = NULL, tz = "", out_format = "datetime") {
-    stop(paste0(class(x), " not supported"), call. = FALSE)
+    stop(paste0(class(x), " not supported for chronos"), call. = FALSE)
 }
 
 #' Parse datetime from strings using different formats
@@ -97,7 +105,36 @@ parse_date <- function(x, formats = NULL, out_date = "%Y-%m-%d") {
 #' @return character vector of parsed dates.
 #' @export
 parse_epoch <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+    UseMethod("parse_epoch")
+}
+
+#' @export
+parse_epoch.character <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
     res <- parse_epoch_rs(x, out_datetime)
     res[res == "not found"] <- NA_character_
     res
+}
+
+#' @export
+parse_epoch.integer <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+    # res <- parse_epoch_i64_rs(x, out_datetime)
+    # res[res == "not found"] <- NA_character_
+    # res
+    # strftime(as.POSIXct(x), format = out_datetime)
+    as.POSIXct(x)
+}
+
+#' @export
+parse_epoch.numeric <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+    # x <- as.integer(x)
+    # res <- parse_epoch_i64_rs(x, out_datetime)
+    # res[res == "not found"] <- NA_character_
+    # res
+    # strftime(as.POSIXct(x), format = out_datetime)
+    as.POSIXct(x)
+}
+
+#' @export
+parse_epoch.default <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+    stop(paste0(class(x), " not supported for parse_epoch"), call. = FALSE)
 }

@@ -67,10 +67,22 @@ fn parse_epoch_rs(times: Vec<String>, out_format: &str) -> Vec<String> {
         .collect()
 }
 
+#[extendr]
+fn parse_epoch_i64_rs(times: Vec<i32>, out_format: &str) -> Vec<String> {
+    times
+        .iter()
+        .map(|&epoch| {
+            let datetime = Local.timestamp(epoch.into(), 0);
+            datetime.format(out_format).to_string()
+        })
+        .collect()
+}
+
 extendr_module! {
     mod chronos;
     fn parse_guess_rs;
     fn parse_datetime_rs;
     fn parse_date_rs;
     fn parse_epoch_rs;
+    fn parse_epoch_i64_rs;
 }

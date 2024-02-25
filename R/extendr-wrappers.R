@@ -19,5 +19,7 @@ parse_date_rs <- function(times, formats, out_format) .Call(wrap__parse_date_rs,
 
 parse_epoch_rs <- function(times, out_format) .Call(wrap__parse_epoch_rs, times, out_format)
 
+parse_epoch_i64_rs <- function(times, out_format) .Call(wrap__parse_epoch_i64_rs, times, out_format)
+
 
 # nolint end
