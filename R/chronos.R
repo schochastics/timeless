@@ -5,64 +5,72 @@
 #' @param x A vector of type character with date(time) expressions to be parsed and converted.
 #' @param formats character vector of formats to try out (see [base::strptime]).
 #' If NULL, uses a set of predefined formats mostly taken from the anytime package.
-#' @param out_datetime character defining the datetime format of the parsed strings
-#' @param out_date character defining the date format of the parsed strings
+#' @param out_format character defining the final format of the returned result.
+#' Can be "datetime", "date", or character.
 #' @return A character vector which can be transformed to `POSIXct` or date
 #' @seealso [parse_datetime] and [parse_date] if you need more control over formatting
 #' @examples
 #' chronos(bench_date)
 #' @export
-chronos <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos <- function(x, formats = NULL, out_format = "datetime") {
     UseMethod("chronos")
 }
 
 #' @export
-chronos.factor <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.factor <- function(x, formats = NULL, out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.integer <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.integer <- function(x, formats = NULL, out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.character <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.character <- function(x, formats = NULL, out_format = "datetime") {
+    out_format <- match.arg(out_format, c("datetime", "date", "character"))
     res <- parse_guess_rs(x)
     idx <- res == "not found"
     if (!any(idx)) {
         return(res)
     }
 
-    tmp <- parse_datetime(x[idx], formats, out_datetime)
+    tmp <- parse_datetime(x[idx], formats)
     res[idx] <- tmp
     idx <- is.na(res)
     if (!any(idx)) {
         return(res)
     }
 
-    tmp <- parse_date(x[idx], formats, out_date)
+    tmp <- parse_date(x[idx], formats)
     res[idx] <- tmp
     idx <- is.na(res)
     if (!any(idx)) {
         return(res)
     }
 
-    tmp <- parse_epoch(x[idx], out_datetime)
+    tmp <- parse_epoch(x[idx])
     res[idx] <- tmp
     res[is.na(res)] <- NA_character_
-    return(res)
+    if (out_format == "datetime") {
+        return(.char2datetime(res))
+    } else if (out_format == "date") {
+        return(.char2date(res))
+    } else if (out_format == "character") {
+        return(res)
+    }
 }
 
 #' @export
-chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.default <- function(x, formats = NULL, out_format = "datetime") {
     stop(paste0(class(x), " not suported"), call. = FALSE)
 }
 
 #' Parse datetime from strings using different formats
 #' @inheritParams chronos
+#' @param out_datetime character defining the datetime format of the parsed strings
 #' @return character vector of parsed datetimes
 #' @export
 parse_datetime <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S") {
@@ -76,6 +84,7 @@ parse_datetime <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S"
 
 #' Parse date from strings using different formats
 #' @inheritParams chronos
+#' @param out_date character defining the date format of the parsed strings
 #' @return character vector of parsed dates.
 #' @export
 parse_date <- function(x, formats = NULL, out_date = "%Y-%m-%d") {
@@ -89,6 +98,7 @@ parse_date <- function(x, formats = NULL, out_date = "%Y-%m-%d") {
 
 #' Parse datetime from epoch
 #' @inheritParams chronos
+#' @param out_datetime character defining the datetime format of the parsed strings
 #' @return character vector of parsed dates.
 #' @export
 parse_epoch <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
