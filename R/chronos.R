@@ -30,9 +30,9 @@ chronos.integer <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S
     NextMethod("chronos")
 }
 
-#' @S3method chronos default
+#' @S3method chronos character
 #' @export
-chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.character <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
     res <- parse_guess_rs(x)
     idx <- res == "not found"
     if (!any(idx)) {
@@ -57,6 +57,12 @@ chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S
     res[idx] <- tmp
     res[is.na(res)] <- NA_character_
     return(res)
+}
+
+#' @S3method chronos default
+#' @export
+chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+    stop(paste0(class(x), " not suported"), call. = FALSE)
 }
 
 #' Parse datetime from strings using different formats
