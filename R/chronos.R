@@ -98,6 +98,7 @@ parse_date <- function(x, formats = NULL, out_date = "%Y-%m-%d") {
 
 #' Parse datetime from epoch
 #' @inheritParams chronos
+#' @param out_datetime character defining the datetime format of the parsed strings
 #' @return character vector of parsed dates.
 #' @export
 parse_epoch <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {

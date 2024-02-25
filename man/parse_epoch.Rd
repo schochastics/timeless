@@ -8,6 +8,8 @@ parse_epoch(x, out_datetime = "\%Y-\%m-\%d \%H:\%M:\%S")
 }
 \arguments{
 \item{x}{A vector of type character with date(time) expressions to be parsed and converted.}
+
+\item{out_datetime}{character defining the datetime format of the parsed strings}
 }
 \value{
 character vector of parsed dates.
