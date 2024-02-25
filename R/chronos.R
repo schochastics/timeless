@@ -5,67 +5,61 @@
 #' @param x A vector of type character with date(time) expressions to be parsed and converted.
 #' @param formats character vector of formats to try out (see [base::strptime]).
 #' If NULL, uses a set of predefined formats mostly taken from the anytime package.
-#' @param out_format character defining the final format of the returned result.
+#' @param out_format character. Defining the format of the returned result.
 #' Can be "datetime", "date", or character.
-#' @param tz timezone of output datetime. If NULL, uses local timezone
+#' @param tz timezone of output datetime. If "", uses local timezone
 #' @return A character vector which can be transformed to `POSIXct` or date
 #' @seealso [parse_datetime] and [parse_date] if you need more control over formatting
 #' @examples
 #' chronos(bench_date)
 #' @export
-chronos <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
+chronos <- function(x, formats = NULL, tz = "", out_format = "datetime") {
     UseMethod("chronos")
 }
 
 #' @export
-chronos.factor <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
+chronos.factor <- function(x, formats = NULL, tz = "", out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.integer <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
+chronos.integer <- function(x, formats = NULL, tz = "", out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.character <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
+chronos.character <- function(x, formats = NULL, tz = "", out_format = "datetime") {
     out_format <- match.arg(out_format, c("datetime", "date", "character"))
     res <- parse_guess_rs(x)
     idx <- res == "not found"
     if (!any(idx)) {
-        return(res)
+        .return_parsed(res, tz = tz, format = out_format)
     }
 
     tmp <- parse_datetime(x[idx], formats)
     res[idx] <- tmp
     idx <- is.na(res)
     if (!any(idx)) {
-        return(res)
+        .return_parsed(res, tz = tz, format = out_format)
     }
 
     tmp <- parse_date(x[idx], formats)
     res[idx] <- tmp
     idx <- is.na(res)
     if (!any(idx)) {
-        return(res)
+        .return_parsed(res, tz = tz, format = out_format)
     }
 
     tmp <- parse_epoch(x[idx])
     res[idx] <- tmp
     res[is.na(res)] <- NA_character_
-    if (out_format == "datetime") {
-        return(.char2datetime(res, tz = tz))
-    } else if (out_format == "date") {
-        return(.char2date(res))
-    } else if (out_format == "character") {
-        return(res)
-    }
+    .return_parsed(res, tz = tz, format = out_format)
 }
 
 #' @export
-chronos.default <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
+chronos.default <- function(x, formats = NULL, tz = "", out_format = "datetime") {
     stop(paste0(class(x), " not supported"), call. = FALSE)
 }
 

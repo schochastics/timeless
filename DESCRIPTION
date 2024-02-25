@@ -21,5 +21,3 @@ Config/rextendr/version: 0.3.1
 Depends: 
     R (>= 2.10)
 LazyData: true
-Suggests: 
-    fasttime
