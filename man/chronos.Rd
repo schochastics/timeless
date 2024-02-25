@@ -4,12 +4,7 @@
 \alias{chronos}
 \title{General purpose parser for Dates from input data}
 \usage{
-chronos(
-  x,
-  formats = NULL,
-  out_datetime = "\%Y-\%m-\%d \%H:\%M:\%S",
-  out_date = "\%Y-\%m-\%d"
-)
+chronos(x, formats = NULL, out_format = "datetime")
 }
 \arguments{
 \item{x}{A vector of type character with date(time) expressions to be parsed and converted.}
@@ -17,9 +12,8 @@ chronos(
 \item{formats}{character vector of formats to try out (see \link[base:strptime]{base::strptime}).
 If NULL, uses a set of predefined formats mostly taken from the anytime package.}
 
-\item{out_datetime}{character defining the datetime format of the parsed strings}
-
-\item{out_date}{character defining the date format of the parsed strings}
+\item{out_format}{character defining the final format of the returned result.
+Can be "datetime", "date", or character.}
 }
 \value{
 A character vector which can be transformed to \code{POSIXct} or date
