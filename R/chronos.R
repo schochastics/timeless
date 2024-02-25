@@ -7,29 +7,30 @@
 #' If NULL, uses a set of predefined formats mostly taken from the anytime package.
 #' @param out_format character defining the final format of the returned result.
 #' Can be "datetime", "date", or character.
+#' @param tz timezone of output datetime. If NULL, uses local timezone
 #' @return A character vector which can be transformed to `POSIXct` or date
 #' @seealso [parse_datetime] and [parse_date] if you need more control over formatting
 #' @examples
 #' chronos(bench_date)
 #' @export
-chronos <- function(x, formats = NULL, out_format = "datetime") {
+chronos <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
     UseMethod("chronos")
 }
 
 #' @export
-chronos.factor <- function(x, formats = NULL, out_format = "datetime") {
+chronos.factor <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.integer <- function(x, formats = NULL, out_format = "datetime") {
+chronos.integer <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.character <- function(x, formats = NULL, out_format = "datetime") {
+chronos.character <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
     out_format <- match.arg(out_format, c("datetime", "date", "character"))
     res <- parse_guess_rs(x)
     idx <- res == "not found"
@@ -55,7 +56,7 @@ chronos.character <- function(x, formats = NULL, out_format = "datetime") {
     res[idx] <- tmp
     res[is.na(res)] <- NA_character_
     if (out_format == "datetime") {
-        return(.char2datetime(res))
+        return(.char2datetime(res, tz = tz))
     } else if (out_format == "date") {
         return(.char2date(res))
     } else if (out_format == "character") {
@@ -64,8 +65,8 @@ chronos.character <- function(x, formats = NULL, out_format = "datetime") {
 }
 
 #' @export
-chronos.default <- function(x, formats = NULL, out_format = "datetime") {
-    stop(paste0(class(x), " not suported"), call. = FALSE)
+chronos.default <- function(x, formats = NULL, tz = NULL, out_format = "datetime") {
+    stop(paste0(class(x), " not supported"), call. = FALSE)
 }
 
 #' Parse datetime from strings using different formats

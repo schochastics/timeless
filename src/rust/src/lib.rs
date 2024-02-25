@@ -7,7 +7,11 @@ fn parse_guess_rs(times: Vec<String>) -> Vec<String> {
     times
         .iter()
         .map(|input| match input.parse::<DateTimeUtc>() {
-            Ok(value) => value.0.format("%Y-%m-%d %H:%M:%S").to_string(),
+            Ok(value) => value
+                .0
+                .with_timezone(&Local)
+                .format("%Y-%m-%d %H:%M:%S")
+                .to_string(),
             Err(_e) => "not found".to_string(),
         })
         .collect()
