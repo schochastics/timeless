@@ -7,29 +7,32 @@
 #' If NULL, uses a set of predefined formats mostly taken from the anytime package.
 #' @param out_datetime character defining the datetime format of the parsed strings
 #' @param out_date character defining the date format of the parsed strings
+#' @param out_format character defining the final format of the returned result.
+#' Either "datetime" or "date".
 #' @return A character vector which can be transformed to `POSIXct` or date
 #' @seealso [parse_datetime] and [parse_date] if you need more control over formatting
 #' @examples
 #' chronos(bench_date)
 #' @export
-chronos <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d", out_format = "datetime") {
     UseMethod("chronos")
 }
 
 #' @export
-chronos.factor <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.factor <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d", out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.integer <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.integer <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d", out_format = "datetime") {
     x <- as.character(x)
     NextMethod("chronos")
 }
 
 #' @export
-chronos.character <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.character <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d", out_format = "datetime") {
+    out_format <- match.arg(out_format, c("datetime", "date"))
     res <- parse_guess_rs(x)
     idx <- res == "not found"
     if (!any(idx)) {
@@ -57,7 +60,7 @@ chronos.character <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:
 }
 
 #' @export
-chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d") {
+chronos.default <- function(x, formats = NULL, out_datetime = "%Y-%m-%d %H:%M:%S", out_date = "%Y-%m-%d", out_format = "datetime") {
     stop(paste0(class(x), " not suported"), call. = FALSE)
 }
 
