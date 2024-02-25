@@ -30,7 +30,7 @@ chronos.integer <- function(x, formats = NULL, out_format = "datetime") {
 
 #' @export
 chronos.character <- function(x, formats = NULL, out_format = "datetime") {
-    out_format <- match.arg(out_format, c("datetime", "date"))
+    out_format <- match.arg(out_format, c("datetime", "date", "character"))
     res <- parse_guess_rs(x)
     idx <- res == "not found"
     if (!any(idx)) {
@@ -55,9 +55,9 @@ chronos.character <- function(x, formats = NULL, out_format = "datetime") {
     res[idx] <- tmp
     res[is.na(res)] <- NA_character_
     if (out_format == "datetime") {
-        .char2datetime(res)
+        return(.char2datetime(res))
     } else if (out_format == "date") {
-        .char2date(res)
+        return(.char2date(res))
     } else if (out_format == "character") {
         return(res)
     }
