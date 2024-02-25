@@ -4,7 +4,7 @@
 \alias{chronos}
 \title{General purpose parser for Dates from input data}
 \usage{
-chronos(x, formats = NULL, out_format = "datetime")
+chronos(x, formats = NULL, tz = "", out_format = "datetime")
 }
 \arguments{
 \item{x}{A vector of type character with date(time) expressions to be parsed and converted.}
@@ -12,7 +12,9 @@ chronos(x, formats = NULL, out_format = "datetime")
 \item{formats}{character vector of formats to try out (see \link[base:strptime]{base::strptime}).
 If NULL, uses a set of predefined formats mostly taken from the anytime package.}
 
-\item{out_format}{character defining the final format of the returned result.
+\item{tz}{timezone of output datetime. If "", uses local timezone}
+
+\item{out_format}{character. Defining the format of the returned result.
 Can be "datetime", "date", or character.}
 }
 \value{
