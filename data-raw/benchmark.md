@@ -92,7 +92,7 @@ mb <- microbenchmark::microbenchmark(
     chronos = chronos(bench),
     fast_chronos = fast_chronos(bench),
     anytime = anytime(bench),
-    times = 10L
+    times = 100L
 )
 ggplot2::autoplot(mb)
 ```
@@ -106,7 +106,7 @@ mb <- microbenchmark::microbenchmark(
     chronos = chronos(bench_datetimes),
     fast_chronos = fast_chronos(bench_datetimes),
     anytime = anytime(bench_datetimes),
-    times = 10L
+    times = 100L
 )
 ggplot2::autoplot(mb)
 ```
@@ -122,12 +122,16 @@ mb <- microbenchmark::microbenchmark(
     fast_chronos = fast_chronos(bench_epochs_num),
     anytime = anytime(bench_epochs_num),
     posix = as.POSIXct(bench_epochs_num),
-    times = 10L
+    fastposix = fasttime::fastPOSIXct(bench_epochs_num),
+    times = 100L
 )
 ggplot2::autoplot(mb)
 ```
 
 ![](benchmark_files/figure-commonmark/bench_epoch-1.png)
+
+When the date vector only consists of epoch timestamps, it is best to
+parse them diretly with `as.POSIXct`
 
 ### date
 
@@ -136,7 +140,7 @@ mb <- microbenchmark::microbenchmark(
     chronos = chronos(bench_date, out_format = "date"),
     fast_chronos = fast_chronos(bench_date, out_format = "date"),
     anytime = anydate(bench_date),
-    times = 10L
+    times = 100L
 )
 ggplot2::autoplot(mb)
 ```
