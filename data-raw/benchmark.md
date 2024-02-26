@@ -74,6 +74,10 @@ epoch times.
 
 ## Runtime
 
+The package [fasttime](https://github.com/s-u/fasttime) can be used
+together with chronos to convert larger sets of datetimes by letting
+chronos return a character vector which is then parsed by `fastPOSIXct`.
+
 ``` r
 fast_chronos <- function(x, out_format = "datetime") {
     res <- chronos(x, out_format = "character")

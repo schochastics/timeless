@@ -25,16 +25,12 @@ chronos.factor <- function(x, formats = NULL, tz = "", out_format = "datetime") 
 
 #' @export
 chronos.integer <- function(x, formats = NULL, tz = "", out_format = "datetime") {
-    res <- parse_epoch(x)
-    res[is.na(res)] <- NA_character_
-    .return_parsed(res, tz = tz, format = out_format)
+    parse_epoch(x, tz = tz)
 }
 
 #' @export
 chronos.numeric <- function(x, formats = NULL, tz = "", out_format = "datetime") {
-    res <- parse_epoch(x)
-    res[is.na(res)] <- NA_character_
-    .return_parsed(res, tz = tz, format = out_format)
+    parse_epoch(x, tz = tz)
 }
 
 #' @export
@@ -53,15 +49,26 @@ chronos.character <- function(x, formats = NULL, tz = "", out_format = "datetime
         .return_parsed(res, tz = tz, format = out_format)
     }
 
-    tmp <- parse_date(x[idx], formats)
+    if (out_format == "date") {
+        tmp <- parse_date(x[idx], formats)
+        res[idx] <- tmp
+        idx <- is.na(res)
+        if (!any(idx)) {
+            .return_parsed(res, tz = tz, format = out_format)
+        }
+    }
+    tmp <- parse_epoch(x[idx])
     res[idx] <- tmp
     idx <- is.na(res)
     if (!any(idx)) {
         .return_parsed(res, tz = tz, format = out_format)
     }
 
-    tmp <- parse_epoch(x[idx])
-    res[idx] <- tmp
+    if (out_format != "date") {
+        tmp <- parse_date(x[idx], formats)
+        tmp <- paste(tmp, "00:00:00")
+        res[idx] <- tmp
+    }
     res[is.na(res)] <- NA_character_
     .return_parsed(res, tz = tz, format = out_format)
 }
@@ -102,39 +109,40 @@ parse_date <- function(x, formats = NULL, out_date = "%Y-%m-%d") {
 #' Parse datetime from epoch
 #' @inheritParams chronos
 #' @param out_datetime character defining the datetime format of the parsed strings
+#' @param tz timezone of output datetime. If "", uses local timezone
 #' @return character vector of parsed dates.
 #' @export
-parse_epoch <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+parse_epoch <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S") {
     UseMethod("parse_epoch")
 }
 
 #' @export
-parse_epoch.character <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+parse_epoch.character <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S") {
     res <- parse_epoch_rs(x, out_datetime)
     res[res == "not found"] <- NA_character_
     res
 }
 
 #' @export
-parse_epoch.integer <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+parse_epoch.integer <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S") {
     # res <- parse_epoch_i64_rs(x, out_datetime)
     # res[res == "not found"] <- NA_character_
     # res
     # strftime(as.POSIXct(x), format = out_datetime)
-    as.POSIXct(x)
+    as.POSIXct(x, tz = tz)
 }
 
 #' @export
-parse_epoch.numeric <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+parse_epoch.numeric <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S") {
     # x <- as.integer(x)
     # res <- parse_epoch_i64_rs(x, out_datetime)
     # res[res == "not found"] <- NA_character_
     # res
     # strftime(as.POSIXct(x), format = out_datetime)
-    as.POSIXct(x)
+    as.POSIXct(x, tz = tz)
 }
 
 #' @export
-parse_epoch.default <- function(x, out_datetime = "%Y-%m-%d %H:%M:%S") {
+parse_epoch.default <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S") {
     stop(paste0(class(x), " not supported for parse_epoch"), call. = FALSE)
 }
