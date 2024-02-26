@@ -125,7 +125,7 @@ usethis::use_data(bench_date, overwrite = TRUE)
 formats_datetime <- unique(c(
     "%Y-%m-%d %H:%M:%S", "%Y-%m-%e %H:%M:%S", "%Y-%m-%d %H%M%S",
     "%Y-%m-%e %H%M%S", "%Y/%m/%d %H:%M:%S", "%Y/%m/%e %H:%M:%S",
-    "%Y%m%d %H%M%S", "%Y%m%d %H:%M:%S", "%m/%d/%Y %H:%M:%S", "%m/%e/%Y %H:%M:%S",
+    "%Y%m%d %H%M%S", "%Y%m%d %H:%M:%S", "%d/%m/%Y %H:%M:%S", "%m/%d/%Y %H:%M:%S", "%m/%e/%Y %H:%M:%S",
     "%m-%d-%Y %H:%M:%S", "%m-%e-%Y %H:%M:%S", "%Y-%b-%d %H:%M:%S",
     "%Y-%b-%e %H:%M:%S", "%Y/%b/%d %H:%M:%S", "%Y/%b/%e %H:%M:%S",
     "%Y%b%d %H%M%S%F", "%Y%b%e %H%M%S%F", "%Y%b%d %H:%M:%S%F", "%Y%b%e %H:%M:%S%F",
@@ -141,13 +141,13 @@ formats_datetime <- unique(c(
     "%a %d %b %Y %H:%M:%S%F", "%a %e %b %Y %H:%M:%S%F", "%Y-%m-%d %H:%M:%S%Z",
     "%Y-%m-%e %H:%M:%S%Z", "%a %b %d %H:%M:%S%F xxx %Y", "%a %b %e %H:%M:%S%F xxx %Y",
     "%Y.%m.%d %H:%M", "epoch", "%B %d, %Y %H:%M", "%d %B %Y %I:%M%p",
-    "%A, %d %B %Y %H:%M", "%Y%m%d%H%M", "%d-%m-%Y %H:%M", "%m/%d/%Y %I:%M %p",
+    "%A, %d %B %Y %H:%M", "%Y%m%d%H%M", "%d-%m-%Y %H:%M", "%d/%m/%Y %I:%M %p", "%m/%d/%Y %I:%M %p",
     "%Y-%m-%d %H:%M:%S", "%Y/%m/%d %H:%M:%S", "%d %b %Y %H:%M:%S", "%A, %d %B %Y %I:%M %p",
     "%d/%m/%Y %I:%M %p"
 ))
 
 formats_date <- unique(c(
-    "%Y-%m-%d", "%Y-%m-%e", "%Y%m%d", "%m/%d/%Y", "%m/%e/%Y", "%m-%d-%Y",
+    "%Y-%m-%d", "%Y-%m-%e", "%Y%m%d", "%d/%m/%Y", "%m/%d/%Y", "%m/%e/%Y", "%m-%d-%Y",
     "%m-%e-%Y", "%Y-%b-%d", "%Y-%b-%e", "%Y%b%d", "%Y%b%e", "%b/%d/%Y",
     "%b/%e/%Y", "%b-%d-%Y", "%b-%e-%Y", "%d%b%Y", "%e%b%Y", "%d-%b-%Y",
     "%e-%b-%Y", "%Y-%B-%d", "%Y-%B-%e", "%Y%B%d", "%Y%B%e", "%B/%d/%Y",
