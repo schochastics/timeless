@@ -18,9 +18,10 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/chronos)](https://CRAN.R-project.org/package=chronos)
+[![Codecov test coverage](https://codecov.io/gh/schochastics/chronos/branch/main/graph/badge.svg)](https://app.codecov.io/gh/schochastics/chronos?branch=main)
 <!-- badges: end -->
 
-A fast general purpose date/time converter using the Rust crate [dateparser](https://crates.io/crates/dateparser) and [chrono](https://crates.io/crates/chrono).
+A fast general purpose date/time converter written in Rust with crates [dateparser](https://crates.io/crates/dateparser) and [chrono](https://crates.io/crates/chrono).
 
 ## Installation
 
@@ -38,28 +39,26 @@ library(chronos)
 
 ## Formats
 
-chronos understands 93 different date(time) formats out of the box
+chronos understands many different date(time) formats out of the box. A subset is included as a small benchmark dataset.
 ```{r}
 bench_date
 ```
-plus all formats supported by [anytime](https://github.com/eddelbuettel/anytime).
 
-`chronos()` parses each date(time) into a character with a form that can be easily
-transformed into a `date` or `POSIXct` object by any standard datetime R function.
-(**This will eventually be included in chronos**) 
+`chronos()` is the powerhouse of the package and tries as hard as possible to parse every input into either
+a date or a datetime, depending on `out_format`. The function can also return a raw character vector which can be fed into faster
+converters, such as [fasttime](https://github.com/s-u/fasttime).
 ```{r}
-chronos(bench_date)
+chronos(bench_date, out_format = "datetime")
 ```
 ## Functions
 
-`chronos()` is the powerhouse of the package and tries as hard as possible to parse every input.
-under the hood it calls three functions which can also be used in isolation:
+Under the hood `chronos()` calls three functions which can also be used in isolation:
 
 - `parse_datetime()`: a fast datetime parser that tries several different formats until it can parse the input
 
 - `parse_date()`: a fast date parser that tries several different formats until it can parse the input
 
-- `parse_epoch()`: a fast epoch timestamp parser
+- `parse_epoch()`: a fast-ish epoch timestamp parser
 
 ## other packages
 
@@ -84,9 +83,8 @@ microbenchmark::microbenchmark(
 )
 ```
 
-Note however that chronos does return only a character vector that needs to be converted
-to a `POSIXct`. This could be done efficiently with [fasttime](https://github.com/s-u/fasttime) 
+See [this benchmark](https://github.com/schochastics/chronos/blob/main/data-raw/benchmark.md) for more details.
 
 **Disclaimer**:  
 While it might seem that `chronos` has an edge over `anytime`, it is far less battle tested and
-robust. I am grateful for everyone who can take the package for a spin and report issues.
+mature. Date parsing can be very tricky. I am grateful for everyone who can take the package for a spin and report issues.

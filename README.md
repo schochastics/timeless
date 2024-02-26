@@ -8,9 +8,11 @@
 [![R-CMD-check](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/chronos)](https://CRAN.R-project.org/package=chronos)
+[![Codecov test
+coverage](https://codecov.io/gh/schochastics/chronos/branch/main/graph/badge.svg)](https://app.codecov.io/gh/schochastics/chronos?branch=main)
 <!-- badges: end -->
 
-A fast general purpose date/time converter using the Rust crate
+A fast general purpose date/time converter written in Rust with crates
 [dateparser](https://crates.io/crates/dateparser) and
 [chrono](https://crates.io/crates/chrono).
 
@@ -30,7 +32,8 @@ library(chronos)
 
 ## Formats
 
-chronos understands 93 different date(time) formats out of the box
+chronos understands many different date(time) formats out of the box. A
+subset is included as a small benchmark dataset.
 
 ``` r
 bench_date
@@ -83,53 +86,67 @@ bench_date
 #> [93] "2014年04月08日"
 ```
 
-plus all formats supported by
-[anytime](https://github.com/eddelbuettel/anytime).
-
-`chronos()` parses each date(time) into a character with a form that can
-be easily transformed into a `date` or `POSIXct` object by any standard
-datetime R function. (**This will eventually be included in chronos**)
+`chronos()` is the powerhouse of the package and tries as hard as
+possible to parse every input into either a date or a datetime,
+depending on `out_format`. The function can also return a raw character
+vector which can be fed into faster converters, such as
+[fasttime](https://github.com/s-u/fasttime).
 
 ``` r
-chronos(bench_date)
-#>  [1] "2017-11-25 22:22:26" "2021-05-03 06:04:08" "2021-05-03 06:54:32"
-#>  [4] "2021-05-01 01:17:02" "2017-11-25 22:34:50" "2021-06-02 06:31:39"
-#>  [7] "2019-11-29 16:08:00" "2019-11-29 16:08:05" "2021-05-03 06:31:36"
-#> [10] "2021-05-03 06:31:39" "2019-11-29 16:15:47" "2017-07-19 03:21:51"
-#> [13] "2014-04-26 15:24:37" "2021-04-30 19:14:00" "2021-04-30 19:14:10"
-#> [16] "2021-04-30 19:14:10" "2014-04-26 15:24:37" "2014-04-26 15:24:37"
-#> [19] "2012-08-03 16:31:59" "2017-11-25 21:31:15" "2017-11-25 21:31:00"
-#> [22] "2014-12-16 06:20:00" "2014-12-16 06:20:00" "2014-04-26 05:13:43"
-#> [25] "2014-04-26 04:13:44" "2012-08-03 18:31:59" "2015-09-30 18:48:56"
-#> [28] "2021-02-21 18:33:02" "2021-02-21 18:33:02" "2021-02-21 18:33:02"
-#> [31] "2020-07-19 18:33:02" "2024-02-25 00:06:06" "2024-02-25 15:00:00"
-#> [34] "2024-02-25 05:00:00" "2024-02-25 09:06:06" "2024-02-26 00:00:00"
-#> [37] "2024-02-25 14:00:00" "2024-02-25 18:00:00" "2024-05-06 19:24:00"
-#> [40] "2024-05-27 00:45:27" "2009-05-08 15:57:51" "2012-09-17 08:09:00"
-#> [43] "2012-09-17 08:10:09" "2021-05-02 15:51:31" "2021-05-02 15:51:00"
-#> [46] "2021-05-26 07:49:00" "2012-09-17 18:09:00" "2021-02-21 18:33:02"
-#> [49] "2021-05-25 17:33:02" "1970-10-07 18:33:02" "1970-10-07 18:33:02"
-#> [52] "1970-10-07 18:33:02" "1970-10-07 18:33:02" "1970-10-07 18:33:02"
-#> [55] "2006-02-12 18:17:00" "2006-02-12 18:17:00" "2019-05-14 17:11:40"
-#> [58] "1970-10-07 18:33:02" "1970-10-07 18:33:02" "2013-02-03 18:33:02"
-#> [61] "2013-07-01 17:33:02" "2014-04-08 20:05:00" "2014-04-08 20:05:00"
-#> [64] "2014-04-08 20:05:00" "2014-04-02 01:00:51" "1965-08-07 23:00:00"
-#> [67] "1965-08-08 12:00:01" "1965-08-08 12:00:00" "1965-08-08 12:00:00"
-#> [70] "1965-08-07 23:00:00" "2014-04-02 01:00:51" "2012-03-19 09:11:59"
-#> [73] "2012-03-19 09:11:59" "2014-03-31 17:33:02" "2014-03-31 17:33:02"
-#> [76] "1971-08-21 18:33:02" "1971-08-01 18:33:02" "2014-04-08 20:05:00"
-#> [79] "2014-04-08 20:05:00" "2014-04-02 01:00:51" "2014-04-02 01:00:51"
-#> [82] "2012-03-19 09:11:59" "2012-03-19 09:11:59" "2014-03-31 17:33:02"
-#> [85] "2014-03-31 17:33:02" "2014-03-31 17:33:02" "2014-03-31 17:33:02"
-#> [88] "1971-08-21 18:33:02" "2014-03-30 17:33:02" "2014-03-25 18:33:02"
-#> [91] "2017-11-13 13:14:20" "2014-04-08 09:25:18" "2014-04-08 17:33:02"
+chronos(bench_date, out_format = "datetime")
+#>  [1] "2017-11-25 23:22:26 CET"  "2021-05-03 08:04:08 CEST"
+#>  [3] "2021-05-03 08:54:32 CEST" "2021-05-01 03:17:02 CEST"
+#>  [5] "2017-11-25 23:34:50 CET"  "2021-06-02 08:31:39 CEST"
+#>  [7] "2019-11-29 17:08:00 CET"  "2019-11-29 17:08:05 CET" 
+#>  [9] "2021-05-03 08:31:36 CEST" "2021-05-03 08:31:39 CEST"
+#> [11] "2019-11-29 17:15:47 CET"  "2017-07-19 05:21:51 CEST"
+#> [13] "2014-04-26 17:24:37 CEST" "2021-04-30 21:14:00 CEST"
+#> [15] "2021-04-30 21:14:10 CEST" "2021-04-30 21:14:10 CEST"
+#> [17] "2014-04-26 17:24:37 CEST" "2014-04-26 17:24:37 CEST"
+#> [19] "2012-08-03 18:31:59 CEST" "2017-11-25 22:31:15 CET" 
+#> [21] "2017-11-25 22:31:00 CET"  "2014-12-16 07:20:00 CET" 
+#> [23] "2014-12-16 07:20:00 CET"  "2014-04-26 07:13:43 CEST"
+#> [25] "2014-04-26 06:13:44 CEST" "2012-08-03 20:31:59 CEST"
+#> [27] "2015-09-30 20:48:56 CEST" "2021-02-21 20:08:07 CET" 
+#> [29] "2021-02-21 20:08:07 CET"  "2021-02-21 20:08:07 CET" 
+#> [31] "2020-07-19 21:08:07 CEST" "2024-02-26 01:06:06 CET" 
+#> [33] "2024-02-26 16:00:00 CET"  "2024-02-26 06:00:00 CET" 
+#> [35] "2024-02-26 10:06:06 CET"  "2024-02-27 01:00:00 CET" 
+#> [37] "2024-02-26 15:00:00 CET"  "2024-02-26 19:00:00 CET" 
+#> [39] "2024-05-06 21:24:00 CEST" "2024-05-27 02:45:27 CEST"
+#> [41] "2009-05-08 17:57:51 CEST" "2012-09-17 10:09:00 CEST"
+#> [43] "2012-09-17 10:10:09 CEST" "2021-05-02 17:51:31 CEST"
+#> [45] "2021-05-02 17:51:00 CEST" "2021-05-26 09:49:00 CEST"
+#> [47] "2012-09-17 20:09:00 CEST" "2021-02-21 20:08:07 CET" 
+#> [49] "2021-05-25 20:08:07 CEST" "1970-10-07 20:08:07 CET" 
+#> [51] "1970-10-07 20:08:07 CET"  "1970-10-07 20:08:07 CET" 
+#> [53] "1970-10-07 20:08:07 CET"  "1970-10-07 20:08:07 CET" 
+#> [55] "2006-02-12 19:17:00 CET"  "2006-02-12 19:17:00 CET" 
+#> [57] "2019-05-14 19:11:40 CEST" "1970-10-07 20:08:07 CET" 
+#> [59] "1970-10-07 20:08:07 CET"  "2013-02-03 20:08:07 CET" 
+#> [61] "2013-07-01 20:08:07 CEST" "2014-04-08 22:05:00 CEST"
+#> [63] "2014-04-08 22:05:00 CEST" "2014-04-08 22:05:00 CEST"
+#> [65] "2014-04-02 03:00:51 CEST" "1965-08-08 00:00:00 CET" 
+#> [67] "1965-08-08 13:00:01 CET"  "1965-08-08 13:00:00 CET" 
+#> [69] "1965-08-08 13:00:00 CET"  "1965-08-08 00:00:00 CET" 
+#> [71] "2014-04-02 03:00:51 CEST" "2012-03-19 10:11:59 CET" 
+#> [73] "2012-03-19 10:11:59 CET"  "2014-03-31 20:08:07 CEST"
+#> [75] "2014-03-31 20:08:07 CEST" "1971-08-21 20:08:07 CET" 
+#> [77] "1971-08-01 20:08:07 CET"  "2014-04-08 22:05:00 CEST"
+#> [79] "2014-04-08 22:05:00 CEST" "2014-04-02 03:00:51 CEST"
+#> [81] "2014-04-02 03:00:51 CEST" "2012-03-19 10:11:59 CET" 
+#> [83] "2012-03-19 10:11:59 CET"  "2014-03-31 20:08:07 CEST"
+#> [85] "2014-03-31 20:08:07 CEST" "2014-03-31 20:08:07 CEST"
+#> [87] "2014-03-31 20:08:07 CEST" "1971-08-21 20:08:07 CET" 
+#> [89] "2014-03-30 20:08:07 CEST" "2014-03-26 20:08:07 CET" 
+#> [91] "2017-11-13 14:14:20 CET"  "2014-04-08 11:25:18 CEST"
+#> [93] "2014-04-08 20:08:07 CEST"
 ```
 
 ## Functions
 
-`chronos()` is the powerhouse of the package and tries as hard as
-possible to parse every input. under the hood it calls three functions
-which can also be used in isolation:
+Under the hood `chronos()` calls three functions which can also be used
+in isolation:
 
 -   `parse_datetime()`: a fast datetime parser that tries several
     different formats until it can parse the input
@@ -137,7 +154,7 @@ which can also be used in isolation:
 -   `parse_date()`: a fast date parser that tries several different
     formats until it can parse the input
 
--   `parse_epoch()`: a fast epoch timestamp parser
+-   `parse_epoch()`: a fast-ish epoch timestamp parser
 
 ## other packages
 
@@ -212,20 +229,21 @@ microbenchmark::microbenchmark(
     chronos(bench_date),
     anytime::anytime(bench_date)
 )
-#> Unit: microseconds
-#>                          expr       min        lq      mean   median        uq
-#>           chronos(bench_date)   208.159   243.989   315.514   288.13   366.911
-#>  anytime::anytime(bench_date) 30585.098 33923.360 36199.226 35237.92 37092.705
-#>        max neval
-#>    754.244   100
-#>  53963.116   100
+#> Unit: milliseconds
+#>                          expr      min       lq     mean   median       uq
+#>           chronos(bench_date)  1.71818  1.73854  1.95125  1.79283  2.11222
+#>  anytime::anytime(bench_date) 30.29220 30.43234 33.46214 30.59864 35.52381
+#>       max neval
+#>   3.42006   100
+#>  46.84838   100
 ```
 
-Note however that chronos does return only a character vector that needs
-to be converted to a `POSIXct`. This could be done efficiently with
-[fasttime](https://github.com/s-u/fasttime)
+See [this
+benchmark](https://github.com/schochastics/chronos/blob/main/data-raw/benchmark.md)
+for more details.
 
 **Disclaimer**:  
 While it might seem that `chronos` has an edge over `anytime`, it is far
-less battle tested and robust. I am grateful for everyone who can take
-the package for a spin and report issues.
+less battle tested and mature. Date parsing can be very tricky. I am
+grateful for everyone who can take the package for a spin and report
+issues.
