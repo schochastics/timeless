@@ -142,7 +142,8 @@ formats_datetime <- unique(c(
     "%Y-%m-%e %H:%M:%S%Z", "%a %b %d %H:%M:%S%F xxx %Y", "%a %b %e %H:%M:%S%F xxx %Y",
     "%Y.%m.%d %H:%M", "epoch", "%B %d, %Y %H:%M", "%d %B %Y %I:%M%p",
     "%A, %d %B %Y %H:%M", "%Y%m%d%H%M", "%d-%m-%Y %H:%M", "%m/%d/%Y %I:%M %p",
-    "%Y-%m-%d %H:%M:%S", "%Y/%m/%d %H:%M:%S", "%d %b %Y %H:%M:%S"
+    "%Y-%m-%d %H:%M:%S", "%Y/%m/%d %H:%M:%S", "%d %b %Y %H:%M:%S", "%A, %d %B %Y %I:%M %p",
+    "%d/%m/%Y %I:%M %p"
 ))
 
 formats_date <- unique(c(
