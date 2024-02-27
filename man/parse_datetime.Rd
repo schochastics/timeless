@@ -7,7 +7,7 @@
 parse_datetime(x, formats = NULL, out_datetime = "\%Y-\%m-\%d \%H:\%M:\%S")
 }
 \arguments{
-\item{x}{A vector of type character with date(time) expressions to be parsed and converted.}
+\item{x}{A vector with date(time) expressions to be parsed and converted.}
 
 \item{formats}{character vector of formats to try out (see \link[base:strptime]{base::strptime}).
 If NULL, uses a set of predefined formats mostly taken from the anytime package.}

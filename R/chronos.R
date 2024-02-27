@@ -1,15 +1,13 @@
-#' General purpose parser for Dates from input data
+#' Fast general purpose parser for date(time) from input data
 #'
-#' This function uses the dateparser and chrono crates from Rust to parse datetimes (and
-#' dates) from strings.
-#' @param x A vector of type character with date(time) expressions to be parsed and converted.
+#' @param x A vector with date(time) expressions to be parsed and converted.
 #' @param formats character vector of formats to try out (see [base::strptime]).
 #' If NULL, uses a set of predefined formats mostly taken from the anytime package.
 #' @param out_format character. Defining the format of the returned result.
-#' Can be "datetime", "date", or character.
+#' Can be "datetime", "date", or "character".
 #' @param tz timezone of output datetime. If "", uses local timezone
 #' @return A character vector which can be transformed to `POSIXct` or date
-#' @seealso [parse_datetime] and [parse_date] if you need more control over formatting
+#' @seealso [parse_datetime], [parse_date], and [parse_epoch] if you need more control over formatting
 #' @examples
 #' chronos(bench_date)
 #' @export
@@ -74,6 +72,28 @@ chronos.character <- function(x, formats = NULL, tz = "", out_format = "datetime
 }
 
 #' @export
+chronos.Date <- function(x, formats = NULL, tz = "", out_format = "datetime") {
+    if (out_format == "date") {
+        return(x)
+    } else if (out_format == "datetime") {
+        return(as.POSIXct(paste(x, "00:00:00")))
+    } else {
+        as.character(x)
+    }
+}
+
+#' @export
+chronos.POSIXct <- function(x, formats = NULL, tz = "", out_format = "datetime") {
+    if (out_format == "datetime") {
+        return(x)
+    } else if (out_format == "date") {
+        return(as.Date(x))
+    } else {
+        as.character(x)
+    }
+}
+
+#' @export
 chronos.default <- function(x, formats = NULL, tz = "", out_format = "datetime") {
     stop(paste0(class(x), " not supported for chronos"), call. = FALSE)
 }
@@ -125,20 +145,11 @@ parse_epoch.character <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S"
 
 #' @export
 parse_epoch.integer <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S") {
-    # res <- parse_epoch_i64_rs(x, out_datetime)
-    # res[res == "not found"] <- NA_character_
-    # res
-    # strftime(as.POSIXct(x), format = out_datetime)
     as.POSIXct(x, tz = tz)
 }
 
 #' @export
 parse_epoch.numeric <- function(x, tz = "", out_datetime = "%Y-%m-%d %H:%M:%S") {
-    # x <- as.integer(x)
-    # res <- parse_epoch_i64_rs(x, out_datetime)
-    # res[res == "not found"] <- NA_character_
-    # res
-    # strftime(as.POSIXct(x), format = out_datetime)
     as.POSIXct(x, tz = tz)
 }
 

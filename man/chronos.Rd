@@ -2,12 +2,12 @@
 % Please edit documentation in R/chronos.R
 \name{chronos}
 \alias{chronos}
-\title{General purpose parser for Dates from input data}
+\title{Fast general purpose parser for date(time) from input data}
 \usage{
 chronos(x, formats = NULL, tz = "", out_format = "datetime")
 }
 \arguments{
-\item{x}{A vector of type character with date(time) expressions to be parsed and converted.}
+\item{x}{A vector with date(time) expressions to be parsed and converted.}
 
 \item{formats}{character vector of formats to try out (see \link[base:strptime]{base::strptime}).
 If NULL, uses a set of predefined formats mostly taken from the anytime package.}
@@ -15,18 +15,17 @@ If NULL, uses a set of predefined formats mostly taken from the anytime package.
 \item{tz}{timezone of output datetime. If "", uses local timezone}
 
 \item{out_format}{character. Defining the format of the returned result.
-Can be "datetime", "date", or character.}
+Can be "datetime", "date", or "character".}
 }
 \value{
 A character vector which can be transformed to \code{POSIXct} or date
 }
 \description{
-This function uses the dateparser and chrono crates from Rust to parse datetimes (and
-dates) from strings.
+Fast general purpose parser for date(time) from input data
 }
 \examples{
 chronos(bench_date)
 }
 \seealso{
-\link{parse_datetime} and \link{parse_date} if you need more control over formatting
+\link{parse_datetime}, \link{parse_date}, and \link{parse_epoch} if you need more control over formatting
 }
