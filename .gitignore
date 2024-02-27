@@ -6,3 +6,4 @@
 .quarto
 README.html
 docs
+data-raw/benchmark.tsv
