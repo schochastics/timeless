@@ -6,10 +6,9 @@
 # This file was created with the following call:
 #   .Call("wrap__make_chronos_wrappers", use_symbols = TRUE, package_name = "chronos")
 
-#' @docType package
 #' @usage NULL
 #' @useDynLib chronos, .registration = TRUE
-NULL
+"_PACKAGE"
 
 parse_guess_rs <- function(times) .Call(wrap__parse_guess_rs, times)
 
