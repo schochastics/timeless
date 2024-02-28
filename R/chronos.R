@@ -37,14 +37,14 @@ chronos.character <- function(x, formats = NULL, tz = "", out_format = "datetime
     res <- parse_guess_rs(x)
     idx <- res == "not found"
     if (!any(idx)) {
-        .return_parsed(res, tz = tz, format = out_format)
+        return(.return_parsed(res, tz = tz, format = out_format))
     }
 
     tmp <- parse_datetime(x[idx], formats)
     res[idx] <- tmp
     idx <- is.na(res)
     if (!any(idx)) {
-        .return_parsed(res, tz = tz, format = out_format)
+        return(.return_parsed(res, tz = tz, format = out_format))
     }
 
     if (out_format == "date") {
@@ -52,14 +52,14 @@ chronos.character <- function(x, formats = NULL, tz = "", out_format = "datetime
         res[idx] <- tmp
         idx <- is.na(res)
         if (!any(idx)) {
-            .return_parsed(res, tz = tz, format = out_format)
+            return(.return_parsed(res, tz = tz, format = out_format))
         }
     }
     tmp <- parse_epoch(x[idx])
     res[idx] <- tmp
     idx <- is.na(res)
     if (!any(idx)) {
-        .return_parsed(res, tz = tz, format = out_format)
+        return(.return_parsed(res, tz = tz, format = out_format))
     }
 
     if (out_format != "date") {
@@ -68,7 +68,7 @@ chronos.character <- function(x, formats = NULL, tz = "", out_format = "datetime
         res[idx] <- tmp
     }
     res[is.na(res)] <- NA_character_
-    .return_parsed(res, tz = tz, format = out_format)
+    return(.return_parsed(res, tz = tz, format = out_format))
 }
 
 #' @export
