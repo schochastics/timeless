@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/schochastics/timeless/branch/main/graph/badge.svg)](https://app.codecov.io/gh/schochastics/timeless?branch=main)
 <!-- badges: end -->
 
-A fast general purpose date/time converter written in Rust with crates [dateparser](https://crates.io/crates/dateparser) and [chrono](https://crates.io/crates/chrono).
+A fast general purpose date/time converter written in Rust with crates [dateparser](https://github.com/waltzofpearls/dateparser) and [chrono](https://github.com/chronotope/chrono).
 
 ## Installation
 
