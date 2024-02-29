@@ -22,9 +22,6 @@
     <loc>https://schochastics.github.io/chronos/reference/bench_date.html</loc>
   </url>
   <url>
-    <loc>https://schochastics.github.io/chronos/reference/chronos-package.html</loc>
-  </url>
-  <url>
     <loc>https://schochastics.github.io/chronos/reference/chronos.html</loc>
   </url>
   <url>
@@ -38,5 +35,8 @@
   </url>
   <url>
     <loc>https://schochastics.github.io/chronos/reference/parse_epoch.html</loc>
+  </url>
+  <url>
+    <loc>https://schochastics.github.io/chronos/reference/timeless-package.html</loc>
   </url>
 </urlset>
