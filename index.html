@@ -72,7 +72,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="chronos-">chronos <a class="anchor" aria-label="anchor" href="#chronos-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="timeless-">timeless <a class="anchor" aria-label="anchor" href="#timeless-"></a>
 </h1>
 </div>
 <!-- badges: start -->
@@ -81,18 +81,18 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of chronos like so:</p>
+<p>You can install the development version of timeless like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"schochastics/chronos"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"schochastics/timeless"</span><span class="op">)</span></span>
 <span><span class="co">#or</span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"schochastics/chronos"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"schochastics/timeless"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/schochastics/chronos" class="external-link">chronos</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/schochastics/timeless" class="external-link">timeless</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="formats">Formats<a class="anchor" aria-label="anchor" href="#formats"></a>
 </h2>
-<p>chronos understands many different date(time) formats out of the box. A subset is included as a small benchmark dataset.</p>
+<p>timeless understands many different date(time) formats out of the box. A subset is included as a small benchmark dataset.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bench_date</span></span>
 <span><span class="co">#&gt;  [1] "1511648546"                          "1620021848429"                      </span></span>
@@ -158,40 +158,40 @@
 <span><span class="co">#&gt; [21] "2017-11-25 22:31:00 CET"  "2014-12-16 07:20:00 CET" </span></span>
 <span><span class="co">#&gt; [23] "2014-12-16 07:20:00 CET"  "2014-04-26 07:13:43 CEST"</span></span>
 <span><span class="co">#&gt; [25] "2014-04-26 06:13:44 CEST" "2012-08-03 20:31:59 CEST"</span></span>
-<span><span class="co">#&gt; [27] "2015-09-30 20:48:56 CEST" "2021-02-21 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [29] "2021-02-21 20:14:02 CET"  "2021-02-21 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [31] "2020-07-19 21:14:02 CEST" "2024-02-26 01:06:06 CET" </span></span>
-<span><span class="co">#&gt; [33] "2024-02-26 16:00:00 CET"  "2024-02-26 06:00:00 CET" </span></span>
-<span><span class="co">#&gt; [35] "2024-02-26 10:06:06 CET"  "2024-02-27 01:00:00 CET" </span></span>
-<span><span class="co">#&gt; [37] "2024-02-26 15:00:00 CET"  "2024-02-26 19:00:00 CET" </span></span>
+<span><span class="co">#&gt; [27] "2015-09-30 20:48:56 CEST" "2021-02-21 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [29] "2021-02-21 09:12:12 CET"  "2021-02-21 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [31] "2020-07-20 10:12:12 CEST" "2024-02-29 01:06:06 CET" </span></span>
+<span><span class="co">#&gt; [33] "2024-02-29 16:00:00 CET"  "2024-02-29 06:00:00 CET" </span></span>
+<span><span class="co">#&gt; [35] "2024-02-29 10:06:06 CET"  "2024-03-01 01:00:00 CET" </span></span>
+<span><span class="co">#&gt; [37] "2024-02-29 15:00:00 CET"  "2024-02-29 19:00:00 CET" </span></span>
 <span><span class="co">#&gt; [39] "2024-05-06 21:24:00 CEST" "2024-05-27 02:45:27 CEST"</span></span>
 <span><span class="co">#&gt; [41] "2009-05-08 17:57:51 CEST" "2012-09-17 10:09:00 CEST"</span></span>
 <span><span class="co">#&gt; [43] "2012-09-17 10:10:09 CEST" "2021-05-02 17:51:31 CEST"</span></span>
 <span><span class="co">#&gt; [45] "2021-05-02 17:51:00 CEST" "2021-05-26 09:49:00 CEST"</span></span>
-<span><span class="co">#&gt; [47] "2012-09-17 20:09:00 CEST" "2021-02-21 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [49] "2021-05-25 20:14:02 CEST" "1970-10-07 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [51] "1970-10-07 20:14:02 CET"  "1970-10-07 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [53] "1970-10-07 20:14:02 CET"  "1970-10-07 20:14:02 CET" </span></span>
+<span><span class="co">#&gt; [47] "2012-09-17 20:09:00 CEST" "2021-02-21 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [49] "2021-05-25 09:12:12 CEST" "1970-10-07 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [51] "1970-10-07 09:12:12 CET"  "1970-10-07 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [53] "1970-10-07 09:12:12 CET"  "1970-10-07 09:12:12 CET" </span></span>
 <span><span class="co">#&gt; [55] "2006-02-12 19:17:00 CET"  "2006-02-12 19:17:00 CET" </span></span>
-<span><span class="co">#&gt; [57] "2019-05-14 19:11:40 CEST" "1970-10-07 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [59] "1970-10-07 20:14:02 CET"  "2013-02-03 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [61] "2013-07-01 20:14:02 CEST" "2014-04-08 22:05:00 CEST"</span></span>
+<span><span class="co">#&gt; [57] "2019-05-14 19:11:40 CEST" "1970-10-07 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [59] "1970-10-07 09:12:12 CET"  "2013-02-03 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [61] "2013-07-01 09:12:12 CEST" "2014-04-08 22:05:00 CEST"</span></span>
 <span><span class="co">#&gt; [63] "2014-04-08 22:05:00 CEST" "2014-04-08 22:05:00 CEST"</span></span>
 <span><span class="co">#&gt; [65] "2014-04-02 03:00:51 CEST" "1965-08-08 00:00:00 CET" </span></span>
 <span><span class="co">#&gt; [67] "1965-08-08 13:00:01 CET"  "1965-08-08 13:00:00 CET" </span></span>
 <span><span class="co">#&gt; [69] "1965-08-08 13:00:00 CET"  "1965-08-08 00:00:00 CET" </span></span>
 <span><span class="co">#&gt; [71] "2014-04-02 03:00:51 CEST" "2012-03-19 10:11:59 CET" </span></span>
-<span><span class="co">#&gt; [73] "2012-03-19 10:11:59 CET"  "2014-03-31 20:14:02 CEST"</span></span>
-<span><span class="co">#&gt; [75] "2014-03-31 20:14:02 CEST" "1971-08-21 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [77] "1971-08-01 20:14:02 CET"  "2014-04-08 22:05:00 CEST"</span></span>
+<span><span class="co">#&gt; [73] "2012-03-19 10:11:59 CET"  "2014-03-31 09:12:12 CEST"</span></span>
+<span><span class="co">#&gt; [75] "2014-03-31 09:12:12 CEST" "1971-08-21 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [77] "1971-08-01 09:12:12 CET"  "2014-04-08 22:05:00 CEST"</span></span>
 <span><span class="co">#&gt; [79] "2014-04-08 22:05:00 CEST" "2014-04-02 03:00:51 CEST"</span></span>
 <span><span class="co">#&gt; [81] "2014-04-02 03:00:51 CEST" "2012-03-19 10:11:59 CET" </span></span>
-<span><span class="co">#&gt; [83] "2012-03-19 10:11:59 CET"  "2014-03-31 20:14:02 CEST"</span></span>
-<span><span class="co">#&gt; [85] "2014-03-31 20:14:02 CEST" "2014-03-31 20:14:02 CEST"</span></span>
-<span><span class="co">#&gt; [87] "2014-03-31 20:14:02 CEST" "1971-08-21 20:14:02 CET" </span></span>
-<span><span class="co">#&gt; [89] "2014-03-30 20:14:02 CEST" "2014-03-26 20:14:02 CET" </span></span>
+<span><span class="co">#&gt; [83] "2012-03-19 10:11:59 CET"  "2014-03-31 09:12:12 CEST"</span></span>
+<span><span class="co">#&gt; [85] "2014-03-31 09:12:12 CEST" "2014-03-31 09:12:12 CEST"</span></span>
+<span><span class="co">#&gt; [87] "2014-03-31 09:12:12 CEST" "1971-08-21 09:12:12 CET" </span></span>
+<span><span class="co">#&gt; [89] "2014-03-30 09:12:12 CEST" "2014-03-29 09:12:12 CET" </span></span>
 <span><span class="co">#&gt; [91] "2017-11-13 14:14:20 CET"  "2014-04-08 11:25:18 CEST"</span></span>
-<span><span class="co">#&gt; [93] "2014-04-08 20:14:02 CEST"</span></span></code></pre></div>
+<span><span class="co">#&gt; [93] "2014-04-08 09:12:12 CEST"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
@@ -207,7 +207,7 @@
 <h2 id="other-packages">other packages<a class="anchor" aria-label="anchor" href="#other-packages"></a>
 </h2>
 <p><a href="https://github.com/eddelbuettel/anytime" class="external-link">anytime</a> is the most accepted general purpose date(time) converter.</p>
-<p>It does not recognize all accepted formats of chronos out of the box. (Note that the unrecognized formats can be added via <code>anytime::addFormats()</code>)</p>
+<p>It does not recognize all accepted formats of <code>timeless</code> out of the box. (Note that the unrecognized formats can be added via <code>anytime::addFormats()</code>)</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu">coalesce</span><span class="op">(</span></span>
 <span>    <span class="fu">anytime</span><span class="fu">::</span><span class="fu">anytime</span><span class="op">(</span><span class="va">bench_date</span><span class="op">)</span>,</span>
@@ -260,23 +260,23 @@
 <span><span class="co">#&gt; [89] "2014-03-30 00:00:00 CET"  "2014-03-01 00:00:00 CET" </span></span>
 <span><span class="co">#&gt; [91] "1711-03-14 14:13:28 LMT"  NA                        </span></span>
 <span><span class="co">#&gt; [93] NA</span></span></code></pre></div>
-<p>The list of formats supported out-of-the-box can be retrieved with <code>anytime::getFormats()</code>. <code>chronos</code> implements these formats natively too.</p>
-<p>Concerning runtime, <code>chronos</code> seems to be quite a bit faster than <code>anytime</code>.</p>
+<p>The list of formats supported out-of-the-box can be retrieved with <code>anytime::getFormats()</code>. <code>timeless</code> implements these formats natively too.</p>
+<p>Concerning runtime, <code>timeless</code> seems to be quite a bit faster than <code>anytime</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">microbenchmark</span><span class="fu">::</span><span class="fu">microbenchmark</span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="reference/chronos.html">chronos</a></span><span class="op">(</span><span class="va">bench_date</span><span class="op">)</span>,</span>
 <span>    <span class="fu">anytime</span><span class="fu">::</span><span class="fu">anytime</span><span class="op">(</span><span class="va">bench_date</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; Unit: milliseconds</span></span>
-<span><span class="co">#&gt;                          expr      min      lq     mean   median       uq</span></span>
-<span><span class="co">#&gt;           chronos(bench_date)  1.71675  1.9059  2.15629  2.08353  2.25438</span></span>
-<span><span class="co">#&gt;  anytime::anytime(bench_date) 30.33983 33.5902 35.97316 35.62357 37.98794</span></span>
+<span><span class="co">#&gt; Unit: microseconds</span></span>
+<span><span class="co">#&gt;                          expr       min        lq      mean    median        uq</span></span>
+<span><span class="co">#&gt;           chronos(bench_date)   600.645   623.223   721.321   665.913   769.888</span></span>
+<span><span class="co">#&gt;  anytime::anytime(bench_date) 30296.058 30447.672 32433.267 30697.454 34749.814</span></span>
 <span><span class="co">#&gt;       max neval</span></span>
-<span><span class="co">#&gt;   4.46819   100</span></span>
-<span><span class="co">#&gt;  46.87357   100</span></span></code></pre></div>
-<p>See <a href="https://github.com/schochastics/chronos/blob/main/data-raw/benchmark.md" class="external-link">this benchmark</a> for more details.</p>
+<span><span class="co">#&gt;   1189.32   100</span></span>
+<span><span class="co">#&gt;  42604.81   100</span></span></code></pre></div>
+<p>See <a href="https://github.com/schochastics/timeless/blob/main/data-raw/benchmark.md" class="external-link">this benchmark</a> for more details.</p>
 <p><strong>Disclaimer</strong>:<br>
-While it might seem that <code>chronos</code> has an edge over <code>anytime</code>, it is far less battle tested and mature. Date parsing can be very tricky. I am grateful for everyone who can take the package for a spin and report issues.</p>
+While it might seem that <code>timeless</code> has an edge over <code>anytime</code>, it is far less battle tested and mature. Date parsing can be very tricky. I am grateful for everyone who can take the package for a spin and report issues.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -314,9 +314,9 @@ While it might seem that <code>chronos</code> has an edge over <code>anytime</co
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://CRAN.R-project.org/package=chronos" class="external-link"><img src="https://www.r-pkg.org/badges/version/chronos" alt="CRAN status"></a></li>
-<li><a href="https://app.codecov.io/gh/schochastics/chronos?branch=main" class="external-link"><img src="https://codecov.io/gh/schochastics/chronos/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/schochastics/timeless/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/schochastics/timeless/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://CRAN.R-project.org/package=timeless" class="external-link"><img src="https://www.r-pkg.org/badges/version/timeless" alt="CRAN status"></a></li>
+<li><a href="https://app.codecov.io/gh/schochastics/timeless?branch=main" class="external-link"><img src="https://codecov.io/gh/schochastics/timeless/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
