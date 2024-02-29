@@ -1,15 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# chronos <img src="man/figures/logo.png" align="right" height="139" alt="" />
+# timeless <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/schochastics/timeless/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/timeless/actions/workflows/R-CMD-check.yaml)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/chronos)](https://CRAN.R-project.org/package=chronos)
+status](https://www.r-pkg.org/badges/version/timeless)](https://CRAN.R-project.org/package=timeless)
 [![Codecov test
-coverage](https://codecov.io/gh/schochastics/chronos/branch/main/graph/badge.svg)](https://app.codecov.io/gh/schochastics/chronos?branch=main)
+coverage](https://codecov.io/gh/schochastics/timeless/branch/main/graph/badge.svg)](https://app.codecov.io/gh/schochastics/timeless?branch=main)
 <!-- badges: end -->
 
 A fast general purpose date/time converter written in Rust with crates
@@ -18,21 +18,21 @@ A fast general purpose date/time converter written in Rust with crates
 
 ## Installation
 
-You can install the development version of chronos like so:
+You can install the development version of timeless like so:
 
 ``` r
-remotes::install_github("schochastics/chronos")
+remotes::install_github("schochastics/timeless")
 #or
-pak::pak("schochastics/chronos")
+pak::pak("schochastics/timeless")
 ```
 
 ``` r
-library(chronos)
+library(timeless)
 ```
 
 ## Formats
 
-chronos understands many different date(time) formats out of the box. A
+timeless understands many different date(time) formats out of the box. A
 subset is included as a small benchmark dataset.
 
 ``` r
@@ -107,40 +107,40 @@ chronos(bench_date, out_format = "datetime")
 #> [21] "2017-11-25 22:31:00 CET"  "2014-12-16 07:20:00 CET" 
 #> [23] "2014-12-16 07:20:00 CET"  "2014-04-26 07:13:43 CEST"
 #> [25] "2014-04-26 06:13:44 CEST" "2012-08-03 20:31:59 CEST"
-#> [27] "2015-09-30 20:48:56 CEST" "2021-02-21 20:14:02 CET" 
-#> [29] "2021-02-21 20:14:02 CET"  "2021-02-21 20:14:02 CET" 
-#> [31] "2020-07-19 21:14:02 CEST" "2024-02-26 01:06:06 CET" 
-#> [33] "2024-02-26 16:00:00 CET"  "2024-02-26 06:00:00 CET" 
-#> [35] "2024-02-26 10:06:06 CET"  "2024-02-27 01:00:00 CET" 
-#> [37] "2024-02-26 15:00:00 CET"  "2024-02-26 19:00:00 CET" 
+#> [27] "2015-09-30 20:48:56 CEST" "2021-02-21 09:12:12 CET" 
+#> [29] "2021-02-21 09:12:12 CET"  "2021-02-21 09:12:12 CET" 
+#> [31] "2020-07-20 10:12:12 CEST" "2024-02-29 01:06:06 CET" 
+#> [33] "2024-02-29 16:00:00 CET"  "2024-02-29 06:00:00 CET" 
+#> [35] "2024-02-29 10:06:06 CET"  "2024-03-01 01:00:00 CET" 
+#> [37] "2024-02-29 15:00:00 CET"  "2024-02-29 19:00:00 CET" 
 #> [39] "2024-05-06 21:24:00 CEST" "2024-05-27 02:45:27 CEST"
 #> [41] "2009-05-08 17:57:51 CEST" "2012-09-17 10:09:00 CEST"
 #> [43] "2012-09-17 10:10:09 CEST" "2021-05-02 17:51:31 CEST"
 #> [45] "2021-05-02 17:51:00 CEST" "2021-05-26 09:49:00 CEST"
-#> [47] "2012-09-17 20:09:00 CEST" "2021-02-21 20:14:02 CET" 
-#> [49] "2021-05-25 20:14:02 CEST" "1970-10-07 20:14:02 CET" 
-#> [51] "1970-10-07 20:14:02 CET"  "1970-10-07 20:14:02 CET" 
-#> [53] "1970-10-07 20:14:02 CET"  "1970-10-07 20:14:02 CET" 
+#> [47] "2012-09-17 20:09:00 CEST" "2021-02-21 09:12:12 CET" 
+#> [49] "2021-05-25 09:12:12 CEST" "1970-10-07 09:12:12 CET" 
+#> [51] "1970-10-07 09:12:12 CET"  "1970-10-07 09:12:12 CET" 
+#> [53] "1970-10-07 09:12:12 CET"  "1970-10-07 09:12:12 CET" 
 #> [55] "2006-02-12 19:17:00 CET"  "2006-02-12 19:17:00 CET" 
-#> [57] "2019-05-14 19:11:40 CEST" "1970-10-07 20:14:02 CET" 
-#> [59] "1970-10-07 20:14:02 CET"  "2013-02-03 20:14:02 CET" 
-#> [61] "2013-07-01 20:14:02 CEST" "2014-04-08 22:05:00 CEST"
+#> [57] "2019-05-14 19:11:40 CEST" "1970-10-07 09:12:12 CET" 
+#> [59] "1970-10-07 09:12:12 CET"  "2013-02-03 09:12:12 CET" 
+#> [61] "2013-07-01 09:12:12 CEST" "2014-04-08 22:05:00 CEST"
 #> [63] "2014-04-08 22:05:00 CEST" "2014-04-08 22:05:00 CEST"
 #> [65] "2014-04-02 03:00:51 CEST" "1965-08-08 00:00:00 CET" 
 #> [67] "1965-08-08 13:00:01 CET"  "1965-08-08 13:00:00 CET" 
 #> [69] "1965-08-08 13:00:00 CET"  "1965-08-08 00:00:00 CET" 
 #> [71] "2014-04-02 03:00:51 CEST" "2012-03-19 10:11:59 CET" 
-#> [73] "2012-03-19 10:11:59 CET"  "2014-03-31 20:14:02 CEST"
-#> [75] "2014-03-31 20:14:02 CEST" "1971-08-21 20:14:02 CET" 
-#> [77] "1971-08-01 20:14:02 CET"  "2014-04-08 22:05:00 CEST"
+#> [73] "2012-03-19 10:11:59 CET"  "2014-03-31 09:12:12 CEST"
+#> [75] "2014-03-31 09:12:12 CEST" "1971-08-21 09:12:12 CET" 
+#> [77] "1971-08-01 09:12:12 CET"  "2014-04-08 22:05:00 CEST"
 #> [79] "2014-04-08 22:05:00 CEST" "2014-04-02 03:00:51 CEST"
 #> [81] "2014-04-02 03:00:51 CEST" "2012-03-19 10:11:59 CET" 
-#> [83] "2012-03-19 10:11:59 CET"  "2014-03-31 20:14:02 CEST"
-#> [85] "2014-03-31 20:14:02 CEST" "2014-03-31 20:14:02 CEST"
-#> [87] "2014-03-31 20:14:02 CEST" "1971-08-21 20:14:02 CET" 
-#> [89] "2014-03-30 20:14:02 CEST" "2014-03-26 20:14:02 CET" 
+#> [83] "2012-03-19 10:11:59 CET"  "2014-03-31 09:12:12 CEST"
+#> [85] "2014-03-31 09:12:12 CEST" "2014-03-31 09:12:12 CEST"
+#> [87] "2014-03-31 09:12:12 CEST" "1971-08-21 09:12:12 CET" 
+#> [89] "2014-03-30 09:12:12 CEST" "2014-03-29 09:12:12 CET" 
 #> [91] "2017-11-13 14:14:20 CET"  "2014-04-08 11:25:18 CEST"
-#> [93] "2014-04-08 20:14:02 CEST"
+#> [93] "2014-04-08 09:12:12 CEST"
 ```
 
 ## Functions
@@ -161,7 +161,7 @@ in isolation:
 [anytime](https://github.com/eddelbuettel/anytime) is the most accepted
 general purpose date(time) converter.
 
-It does not recognize all accepted formats of chronos out of the box.
+It does not recognize all accepted formats of `timeless` out of the box.
 (Note that the unrecognized formats can be added via
 `anytime::addFormats()`)
 
@@ -220,10 +220,10 @@ dplyr::coalesce(
 ```
 
 The list of formats supported out-of-the-box can be retrieved with
-`anytime::getFormats()`. `chronos` implements these formats natively
+`anytime::getFormats()`. `timeless` implements these formats natively
 too.
 
-Concerning runtime, `chronos` seems to be quite a bit faster than
+Concerning runtime, `timeless` seems to be quite a bit faster than
 `anytime`.
 
 ``` r
@@ -231,21 +231,21 @@ microbenchmark::microbenchmark(
     chronos(bench_date),
     anytime::anytime(bench_date)
 )
-#> Unit: milliseconds
-#>                          expr      min      lq     mean   median       uq
-#>           chronos(bench_date)  1.71675  1.9059  2.15629  2.08353  2.25438
-#>  anytime::anytime(bench_date) 30.33983 33.5902 35.97316 35.62357 37.98794
+#> Unit: microseconds
+#>                          expr       min        lq      mean    median        uq
+#>           chronos(bench_date)   600.645   623.223   721.321   665.913   769.888
+#>  anytime::anytime(bench_date) 30296.058 30447.672 32433.267 30697.454 34749.814
 #>       max neval
-#>   4.46819   100
-#>  46.87357   100
+#>   1189.32   100
+#>  42604.81   100
 ```
 
 See [this
-benchmark](https://github.com/schochastics/chronos/blob/main/data-raw/benchmark.md)
+benchmark](https://github.com/schochastics/timeless/blob/main/data-raw/benchmark.md)
 for more details.
 
 **Disclaimer**:  
-While it might seem that `chronos` has an edge over `anytime`, it is far
-less battle tested and mature. Date parsing can be very tricky. I am
+While it might seem that `timeless` has an edge over `anytime`, it is
+far less battle tested and mature. Date parsing can be very tricky. I am
 grateful for everyone who can take the package for a spin and report
 issues.
