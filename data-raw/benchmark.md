@@ -1,8 +1,8 @@
-# Benchmarking chronos and anytime
+# Benchmarking timeless and anytime
 
 
 ``` r
-library(chronos)
+library(timeless)
 library(anytime)
 ```
 
@@ -75,7 +75,7 @@ epoch times.
 ## Runtime
 
 The package [fasttime](https://github.com/s-u/fasttime) can be used
-together with chronos to convert larger sets of datetimes by letting
+together with timeless to convert larger sets of datetimes by letting
 chronos return a character vector which is then parsed by `fastPOSIXct`.
 
 ``` r

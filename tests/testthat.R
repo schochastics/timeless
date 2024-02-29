@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(chronos)
+library(timeless)
 
-test_check("chronos")
+test_check("timeless")

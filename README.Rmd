@@ -13,33 +13,33 @@ knitr::opts_chunk$set(
 )
 ```
 
-# chronos <img src="man/figures/logo.png" align="right" height="139" alt="" />
+# timeless <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/chronos/actions/workflows/R-CMD-check.yaml)
-[![CRAN status](https://www.r-pkg.org/badges/version/chronos)](https://CRAN.R-project.org/package=chronos)
-[![Codecov test coverage](https://codecov.io/gh/schochastics/chronos/branch/main/graph/badge.svg)](https://app.codecov.io/gh/schochastics/chronos?branch=main)
+[![R-CMD-check](https://github.com/schochastics/timeless/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/timeless/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/timeless)](https://CRAN.R-project.org/package=timeless)
+[![Codecov test coverage](https://codecov.io/gh/schochastics/timeless/branch/main/graph/badge.svg)](https://app.codecov.io/gh/schochastics/timeless?branch=main)
 <!-- badges: end -->
 
 A fast general purpose date/time converter written in Rust with crates [dateparser](https://crates.io/crates/dateparser) and [chrono](https://crates.io/crates/chrono).
 
 ## Installation
 
-You can install the development version of chronos like so:
+You can install the development version of timeless like so:
 
 ``` r
-remotes::install_github("schochastics/chronos")
+remotes::install_github("schochastics/timeless")
 #or
-pak::pak("schochastics/chronos")
+pak::pak("schochastics/timeless")
 ```
 
 ```{r}
-library(chronos)
+library(timeless)
 ```
 
 ## Formats
 
-chronos understands many different date(time) formats out of the box. A subset is included as a small benchmark dataset.
+timeless understands many different date(time) formats out of the box. A subset is included as a small benchmark dataset.
 ```{r}
 bench_date
 ```
@@ -64,7 +64,7 @@ Under the hood `chronos()` calls three functions which can also be used in isola
 
 [anytime](https://github.com/eddelbuettel/anytime) is the most accepted general purpose date(time) converter.
 
-It does not recognize all accepted formats of chronos out of the box. (Note that the unrecognized formats can be added via `anytime::addFormats()`)
+It does not recognize all accepted formats of `timeless` out of the box. (Note that the unrecognized formats can be added via `anytime::addFormats()`)
 ```{r}
 dplyr::coalesce(
     anytime::anytime(bench_date),
@@ -73,9 +73,9 @@ dplyr::coalesce(
 ```
 
 The list of formats supported out-of-the-box can be retrieved with `anytime::getFormats()`.
-`chronos` implements these formats natively too.
+`timeless` implements these formats natively too.
 
-Concerning runtime, `chronos` seems to be quite a bit faster than `anytime`.
+Concerning runtime, `timeless` seems to be quite a bit faster than `anytime`.
 ```{r}
 microbenchmark::microbenchmark(
     chronos(bench_date),
@@ -83,8 +83,8 @@ microbenchmark::microbenchmark(
 )
 ```
 
-See [this benchmark](https://github.com/schochastics/chronos/blob/main/data-raw/benchmark.md) for more details.
+See [this benchmark](https://github.com/schochastics/timeless/blob/main/data-raw/benchmark.md) for more details.
 
 **Disclaimer**:  
-While it might seem that `chronos` has an edge over `anytime`, it is far less battle tested and
+While it might seem that `timeless` has an edge over `anytime`, it is far less battle tested and
 mature. Date parsing can be very tricky. I am grateful for everyone who can take the package for a spin and report issues.

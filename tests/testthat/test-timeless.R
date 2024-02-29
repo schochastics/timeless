@@ -9,5 +9,5 @@ test_that("chronos works with supported formats", {
     dates <- as.character(sapply(fmt, function(x) format(date, format = x), USE.NAMES = FALSE))
     expect_true(all(chronos(dates, out_format = "date") == date))
 
-    expect(!any(is.na(chronos(bench_date))))
+    expect_true(!any(is.na(chronos(bench_date))))
 })

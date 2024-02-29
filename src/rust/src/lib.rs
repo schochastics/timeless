@@ -79,7 +79,7 @@ fn parse_epoch_i64_rs(times: Vec<i32>, out_format: &str) -> Vec<String> {
 }
 
 extendr_module! {
-    mod chronos;
+    mod timeless;
     fn parse_guess_rs;
     fn parse_datetime_rs;
     fn parse_date_rs;

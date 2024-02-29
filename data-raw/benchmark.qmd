@@ -1,11 +1,11 @@
 ---
-title: "Benchmarking chronos and anytime"
+title: "Benchmarking timeless and anytime"
 format: gfm
 ---
 
 ```{r}
 #| label: load_pkgs
-library(chronos)
+library(timeless)
 library(anytime)
 ```
 
@@ -51,7 +51,7 @@ When epoch times are encoded as characters (which happens when all data is put t
 
 ## Runtime
 
-The package [fasttime](https://github.com/s-u/fasttime) can be used together with chronos to convert larger sets of datetimes by letting chronos return a character vector which is then parsed by `fastPOSIXct`.
+The package [fasttime](https://github.com/s-u/fasttime) can be used together with timeless to convert larger sets of datetimes by letting chronos return a character vector which is then parsed by `fastPOSIXct`.
 ```{r}
 #| label: fast_chronos
 

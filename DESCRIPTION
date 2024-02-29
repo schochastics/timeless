@@ -1,18 +1,18 @@
-Package: chronos
+Package: timeless
 Title: Fast General Purpose Date/Time Converter
 Version: 0.1.0
 Authors@R: 
     c(person("David", "Schoch", , "david@schochastics.net", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2952-4812")),
       person("Rollie", "Ma", role = c("ctb", "cph"),comment = "author of dateparser : <https://github.com/waltzofpearls/dateparser>"),
-      person("Brandon W.", "Maister", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
-      person("Dirkjan", "Ochtman", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
-      person("Seonghoon", "Kang", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
-      person("Eric", "Sheppard", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"),
-      person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chronos : <https://github.com/chronotope/chrono>"))
-Description: Fast general purpose date/time converter using Rust. The package wraps the crates 'dateparser' and 'chrono' and implements datetime, date and epoch time parser for heterogeneous vectors of dates.
-URL: https://github.com/schochastics/chronos, https://schochastics.github.io/chronos/
-BugReports: https://github.com/schochastics/chronos/issues
+      person("Brandon W.", "Maister", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
+      person("Dirkjan", "Ochtman", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
+      person("Seonghoon", "Kang", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
+      person("Eric", "Sheppard", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
+      person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"))
+Description: Fast general purpose date/time converter using Rust. The package wraps the crates 'dateparser' and 'chrono' and implements date time, date and epoch time parser for heterogeneous vectors of dates.
+URL: https://github.com/schochastics/timeless, https://schochastics.github.io/timeless/
+BugReports: https://github.com/schochastics/timeless/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

@@ -1,7 +1,7 @@
 TARGET_DIR = ./rust/target
 LIBDIR = $(TARGET_DIR)/release
-STATLIB = $(LIBDIR)/libchronos.a
-PKG_LIBS = -L$(LIBDIR) -lchronos
+STATLIB = $(LIBDIR)/libtimeless.a
+PKG_LIBS = -L$(LIBDIR) -ltimeless
 
 all: C_clean
 

@@ -1,11 +1,11 @@
 [package]
-name = 'chronos'
+name = 'timeless'
 version = '0.1.0'
 edition = '2021'
 
 [lib]
 crate-type = ['staticlib']
-name = 'chronos'
+name = 'timeless'
 
 [dependencies]
 extendr-api = '*'
