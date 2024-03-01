@@ -10,7 +10,7 @@ Authors@R:
       person("Seonghoon", "Kang", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
       person("Eric", "Sheppard", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
       person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"))
-Description: Fast general purpose date/time converter using Rust. The package wraps the crates 'dateparser' and 'chrono' and implements date time, date and epoch time parser for heterogeneous vectors of dates.
+Description: Fast general purpose date/time converter using 'Rust'. The package implements date time, date and epoch time parser for heterogeneous vectors of dates.
 URL: https://github.com/schochastics/timeless, https://schochastics.github.io/timeless/
 BugReports: https://github.com/schochastics/timeless/issues
 License: MIT + file LICENSE
