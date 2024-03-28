@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Fast general purpose date/time converter using Rust. The package wraps the crates 'dateparser' and 'chrono' and implements date time, date and epoch time parser for heterogeneous vectors of dates.
+Fast general purpose date/time converter using 'Rust'. The package implements date time, date and epoch time parser for heterogeneous vectors of dates.
 }
 \seealso{
 Useful links:

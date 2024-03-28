@@ -6,9 +6,13 @@
     return(as.Date(x))
 }
 
-.return_parsed <- function(x, tz = NULL, format = "datetime") {
+.return_parsed <- function(x, tz = NULL, to_tz = NULL, format = "datetime") {
     if (format == "datetime") {
-        return(.char2datetime(x, tz = tz))
+        res <- .char2datetime(x, tz = tz)
+        if (!is.null(to_tz) && to_tz != "") {
+            attr(res, "tzone") <- to_tz
+        }
+        return(res)
     } else if (format == "date") {
         return(.char2date(x))
     } else if (format == "character") {

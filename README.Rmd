@@ -33,6 +33,12 @@ remotes::install_github("schochastics/timeless")
 pak::pak("schochastics/timeless")
 ```
 
+the package is also available on CRAN
+
+```r
+install.packages("timeless")
+```
+
 ```{r}
 library(timeless)
 ```
