@@ -13,6 +13,6 @@ test_that("chronos works with supported formats", {
 })
 
 test_that("timezone conversion #14", {
-    res <- chronos(bench_date[5], tz = "America/Los_Angeles", to_tz = "UTC")
-    expect_equal(res, as.POSIXct("2017-11-26 07:34:50", tz = "UTC"))
+    res <- chronos(bench_date[5], tz = "CET", to_tz = "UTC")
+    expect_equal(res, as.POSIXct("2017-11-25 22:34:50", tz = "UTC"))
 })
