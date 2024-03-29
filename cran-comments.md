@@ -1,12 +1,10 @@
-## Initial Submission
+## Update from 0.1.0 to 0.2.0
 
-
+* implemented better timezone handling
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
-
-* This is a new release.
+0 errors | 0 warnings | 1 notes
 
 * installed size is  5.4Mb
 sub-directories of 1Mb or more:

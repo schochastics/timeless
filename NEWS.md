@@ -1,4 +1,4 @@
-# timeless 0.1.0.9000
+# timeless 0.2.0
 
 * made all functions "timezone free"
 * added to_tz parameter for timezone conversion #14
