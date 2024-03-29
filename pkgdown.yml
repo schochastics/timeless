@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-03-29T18:46Z
+last_built: 2024-03-29T19:03Z
 urls:
   reference: https://schochastics.github.io/chronos/reference
   article: https://schochastics.github.io/chronos/articles
