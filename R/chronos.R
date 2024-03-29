@@ -39,15 +39,15 @@ chronos.numeric <- function(x, formats = NULL, tz = "", to_tz = "", out_format =
 #' @export
 chronos.character <- function(x, formats = NULL, tz = "", to_tz = "", out_format = "datetime") {
     out_format <- match.arg(out_format, c("datetime", "date", "character"))
-    res <- parse_guess_rs(x)
-    idx <- res == "not found"
+    res <- parse_datetime(x, formats)
+    idx <- is.na(res)
     if (!any(idx)) {
         return(.return_parsed(res, tz = tz, to_tz = to_tz, format = out_format))
     }
 
-    tmp <- parse_datetime(x[idx], formats)
+    tmp <- parse_guess_rs(x[idx])
     res[idx] <- tmp
-    idx <- is.na(res)
+    idx <- res == "not found"
     if (!any(idx)) {
         return(.return_parsed(res, tz = tz, to_tz = to_tz, format = out_format))
     }
@@ -60,6 +60,7 @@ chronos.character <- function(x, formats = NULL, tz = "", to_tz = "", out_format
             return(.return_parsed(res, tz = tz, to_tz = to_tz, format = out_format))
         }
     }
+
     tmp <- parse_epoch(x[idx])
     res[idx] <- tmp
     idx <- is.na(res)

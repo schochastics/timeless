@@ -1,5 +1,5 @@
 use chrono::{DateTime, Local, NaiveDate, NaiveDateTime, TimeZone, Utc};
-use dateparser::DateTimeUtc;
+use dateparser::{parse, DateTimeUtc};
 use extendr_api::prelude::*;
 
 #[extendr]
@@ -9,7 +9,8 @@ fn parse_guess_rs(times: Vec<String>) -> Vec<String> {
         .map(|input| match input.parse::<DateTimeUtc>() {
             Ok(value) => value
                 .0
-                .with_timezone(&Local)
+                //.with_timezone(&Local)
+                // .with_timezone(&Utc)
                 .format("%Y-%m-%d %H:%M:%S")
                 .to_string(),
             Err(_e) => "not found".to_string(),
