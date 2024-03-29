@@ -1,5 +1,5 @@
-use chrono::{DateTime, Local, NaiveDate, NaiveDateTime, TimeZone, Utc};
-use dateparser::{parse, DateTimeUtc};
+use chrono::{NaiveDate, NaiveDateTime};
+use dateparser::DateTimeUtc;
 use extendr_api::prelude::*;
 
 #[extendr]
