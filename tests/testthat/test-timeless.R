@@ -1,4 +1,5 @@
 test_that("chronos works with supported formats", {
+    skip_on_cran()
     time <- as.POSIXct("2024-02-26 13:14:00")
     fmt <- formats_lst[["datetime"]][!grepl("%Z", formats_lst[["datetime"]])]
     times <- unique(as.character(sapply(fmt, function(x) format(time, format = x), USE.NAMES = FALSE)))

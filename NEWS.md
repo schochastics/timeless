@@ -1,3 +1,7 @@
+# timeless 0.2.1
+
+* hotfix CRAN issue
+
 # timeless 0.2.0
 
 * made all functions "timezone free"

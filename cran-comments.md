@@ -1,6 +1,6 @@
-## Update from 0.1.0 to 0.2.0
+## Update from 0.2.0 to 0.2.1
 
-* implemented better timezone handling
+* hotfix CRAN errors
 
 ## R CMD check results
 
