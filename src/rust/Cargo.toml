@@ -8,6 +8,6 @@ crate-type = ['staticlib']
 name = 'timeless'
 
 [dependencies]
-extendr-api = '*'
+extendr-api = '0.7.0'
 dateparser = '0.2'
 chrono = '0.4'
