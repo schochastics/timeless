@@ -1,4 +1,4 @@
-## Update from 0.2.0 to 0.2.1
+## Update from 0.2.1 to 0.2.2
 
 * hotfix CRAN errors
 

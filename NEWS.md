@@ -1,3 +1,7 @@
+# timeless 0.2.2
+
+* fix CRAN issue due to C level changes h/t @JosiahParry
+
 # timeless 0.2.1
 
 * hotfix CRAN issue
