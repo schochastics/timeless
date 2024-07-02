@@ -1,3 +1,7 @@
+# timeless 0.2.2.9000
+
+* proper Makefile and pkg vendoring #19
+
 # timeless 0.2.2
 
 * fix CRAN issue due to C level changes h/t @JosiahParry
