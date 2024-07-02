@@ -5,7 +5,7 @@ PKG_LIBS = -L$(LIBDIR) -ltimeless
 
 all: C_clean
 
-CRAN_FLAGS=-j 2 --offline
+CRAN_FLAGS=-j 2
 $(SHLIB): $(STATLIB)
 
 CARGOTMP = $(CURDIR)/.cargo
