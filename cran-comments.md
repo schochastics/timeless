@@ -1,6 +1,6 @@
-## Update from 0.2.1 to 0.2.2
+## Update from 0.2.2 to 0.2.3
 
-* hotfix CRAN errors
+* fix CRAN errors on r devel linux
 
 ## R CMD check results
 

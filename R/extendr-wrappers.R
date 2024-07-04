@@ -8,7 +8,7 @@
 
 #' @usage NULL
 #' @useDynLib timeless, .registration = TRUE
-"_PACKAGE"
+NULL
 
 parse_guess_rs <- function(times) .Call(wrap__parse_guess_rs, times)
 

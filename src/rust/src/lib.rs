@@ -39,7 +39,7 @@ fn parse_date_rs(times: Vec<String>, formats: Vec<String>, out_format: &str) -> 
         .map(|time_str| {
             for fmt in &formats {
                 if let Ok(date) = NaiveDate::parse_from_str(time_str, fmt) {
-                    let naive_datetime = date.and_hms(0, 0, 0);
+                    let naive_datetime = date.and_hms_milli_opt(0, 0, 0, 0).unwrap();
                     return naive_datetime.format(out_format).to_string();
                 }
             }
@@ -54,7 +54,7 @@ fn parse_epoch_rs(times: Vec<String>, out_format: &str) -> Vec<String> {
         .iter()
         .map(|time_str| {
             if let Ok(epoch_seconds) = time_str.parse::<i64>() {
-                let naive_date_time = NaiveDateTime::from_timestamp(epoch_seconds, 0);
+                let naive_date_time = NaiveDateTime::from_timestamp_opt(epoch_seconds, 0).unwrap();
                 return naive_date_time.format(out_format).to_string();
             }
             "not found".to_string()
@@ -67,7 +67,7 @@ fn parse_epoch_i64_rs(times: Vec<i32>, out_format: &str) -> Vec<String> {
     times
         .iter()
         .map(|&epoch| {
-            let naive_date_time = NaiveDateTime::from_timestamp(epoch.into(), 0);
+            let naive_date_time = NaiveDateTime::from_timestamp_opt(epoch.into(), 0).unwrap();
             naive_date_time.format(out_format).to_string()
         })
         .collect()

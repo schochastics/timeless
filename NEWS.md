@@ -1,6 +1,7 @@
-# timeless 0.2.2.9000
+# timeless 0.2.3
 
 * proper Makefile and pkg vendoring #19
+* fix deprecated warnings #20
 
 # timeless 0.2.2
 
