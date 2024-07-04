@@ -1,6 +1,6 @@
 ## Update from 0.2.2 to 0.2.3
 
-* fix CRAN errors on r devel linux
+* fix CRAN warnings on r devel linux
 
 ## R CMD check results
 
