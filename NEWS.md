@@ -1,3 +1,7 @@
+# timeless 0.2.4
+
+* fixed missing rustc version
+
 # timeless 0.2.3
 
 * proper Makefile and pkg vendoring #19

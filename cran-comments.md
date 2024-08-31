@@ -1,6 +1,6 @@
-## Update from 0.2.2 to 0.2.3
+## Update from 0.2.3 to 0.2.4
 
-* fix CRAN warnings on r devel linux
+* fixed missing rustc version in DESCRIPtION
 
 ## R CMD check results
 
