@@ -72,10 +72,11 @@ Under the hood `chronos()` calls three functions which can also be used in isola
 
 It does not recognize all accepted formats of `timeless` out of the box. (Note that the unrecognized formats can be added via `anytime::addFormats()`)
 ```{r}
-dplyr::coalesce(
+sum_na <- function(x) sum(is.na(x))
+sum_na(dplyr::coalesce(
     anytime::anytime(bench_date),
     anytime::anydate(bench_date)
-)
+)) / length(bench_date)
 ```
 
 The list of formats supported out-of-the-box can be retrieved with `anytime::getFormats()`.
