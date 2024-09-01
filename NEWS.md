@@ -1,3 +1,7 @@
+# timeless 0.2.4.9000
+
+* added more formats supporting subseconds
+
 # timeless 0.2.4
 
 * fixed missing rustc version
