@@ -33,11 +33,13 @@ remotes::install_github("schochastics/timeless")
 pak::pak("schochastics/timeless")
 ```
 
-the package is also available on CRAN
+~~the package is also available on CRAN~~
 
 ```r
-install.packages("timeless")
+#install.packages("timeless")
 ```
+
+**The fix I submitted for [#22](https://github.com/schochastics/timeless/issues/22) was apparently not sufficient and the package was archived.**
 
 ```{r}
 library(timeless)

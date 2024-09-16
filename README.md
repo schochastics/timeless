@@ -26,11 +26,15 @@ remotes::install_github("schochastics/timeless")
 pak::pak("schochastics/timeless")
 ```
 
-the package is also available on CRAN
+~~the package is also available on CRAN~~
 
 ``` r
-install.packages("timeless")
+#install.packages("timeless")
 ```
+
+**The fix I submitted for
+[\#22](https://github.com/schochastics/timeless/issues/22) was
+apparently not sufficient and the package was archived.**
 
 ``` r
 library(timeless)
@@ -113,40 +117,40 @@ chronos(bench_date, out_format = "datetime")
 #> [21] "2017-11-25 21:31:00 CET"  "2014-12-16 06:20:00 CET" 
 #> [23] "2014-12-16 06:20:00 CET"  "2014-04-26 05:13:43 CEST"
 #> [25] "2014-04-26 04:13:44 CEST" "2012-08-03 18:31:59 CEST"
-#> [27] "2015-09-30 18:48:56 CEST" "2021-02-21 08:10:06 CET" 
-#> [29] "2021-02-22 07:10:06 CET"  "2021-02-21 07:10:06 CET" 
-#> [31] "2020-07-20 07:10:06 CEST" "2024-08-31 23:06:06 CEST"
-#> [33] "2024-09-01 14:00:00 CEST" "2024-09-01 04:00:00 CEST"
-#> [35] "2024-08-31 09:06:06 CEST" "2024-09-01 00:00:00 CEST"
-#> [37] "2024-08-31 14:00:00 CEST" "2024-09-01 18:00:00 CEST"
+#> [27] "2015-09-30 18:48:56 CEST" "2021-02-21 20:07:26 CET" 
+#> [29] "2021-02-21 19:07:26 CET"  "2021-02-21 19:07:26 CET" 
+#> [31] "2020-07-19 19:07:26 CEST" "2024-09-15 23:06:06 CEST"
+#> [33] "2024-09-16 14:00:00 CEST" "2024-09-16 04:00:00 CEST"
+#> [35] "2024-09-16 09:06:06 CEST" "2024-09-17 00:00:00 CEST"
+#> [37] "2024-09-16 14:00:00 CEST" "2024-09-16 18:00:00 CEST"
 #> [39] "2024-05-06 19:24:00 CEST" "2024-05-27 00:45:27 CEST"
 #> [41] "2009-05-08 15:57:51 CEST" "2012-09-17 08:09:00 CEST"
 #> [43] "2012-09-17 08:10:09 CEST" "2021-05-02 15:51:31 CEST"
 #> [45] "2021-05-02 15:51:00 CEST" "2021-05-26 07:49:00 CEST"
-#> [47] "2012-09-17 18:09:00 CEST" "2021-02-21 08:10:06 CET" 
-#> [49] "2021-05-25 07:10:06 CEST" "1970-10-07 08:10:06 CET" 
-#> [51] "1970-10-07 08:10:06 CET"  "1970-10-07 08:10:06 CET" 
-#> [53] "1970-10-07 08:10:06 CET"  "1970-10-07 08:10:06 CET" 
+#> [47] "2012-09-17 18:09:00 CEST" "2021-02-21 20:07:26 CET" 
+#> [49] "2021-05-25 19:07:26 CEST" "1970-10-07 20:07:26 CET" 
+#> [51] "1970-10-07 20:07:26 CET"  "1970-10-07 20:07:26 CET" 
+#> [53] "1970-10-07 20:07:26 CET"  "1970-10-07 20:07:26 CET" 
 #> [55] "2006-02-12 18:17:00 CET"  "2006-02-12 18:17:00 CET" 
-#> [57] "2019-05-14 17:11:40 CEST" "1970-10-07 08:10:06 CET" 
-#> [59] "1970-10-07 08:10:06 CET"  "2013-02-03 08:10:06 CET" 
-#> [61] "2013-07-01 07:10:06 CEST" "2014-04-08 20:05:00 CEST"
+#> [57] "2019-05-14 17:11:40 CEST" "1970-10-07 20:07:26 CET" 
+#> [59] "1970-10-07 20:07:26 CET"  "2013-02-03 20:07:26 CET" 
+#> [61] "2013-07-01 19:07:26 CEST" "2014-04-08 20:05:00 CEST"
 #> [63] "2014-04-08 20:05:00 CEST" "2014-04-08 20:05:00 CEST"
 #> [65] "2014-02-04 03:00:51 CET"  "1965-08-07 23:00:00 CET" 
 #> [67] "1965-08-08 12:00:01 CET"  "1965-08-08 13:00:00 CET" 
 #> [69] "1965-08-08 13:00:00 CET"  "1965-08-08 00:00:00 CET" 
 #> [71] "2014-02-04 03:00:51 CET"  "2012-03-19 10:11:59 CET" 
-#> [73] "2012-03-19 09:11:59 CET"  "2014-03-31 07:10:06 CEST"
-#> [75] "2014-03-31 07:10:06 CEST" "1971-08-21 08:10:06 CET" 
-#> [77] "1971-08-01 08:10:06 CET"  "2014-04-08 20:05:00 CEST"
+#> [73] "2012-03-19 09:11:59 CET"  "2014-03-31 19:07:26 CEST"
+#> [75] "2014-03-31 19:07:26 CEST" "1971-08-21 20:07:26 CET" 
+#> [77] "1971-08-01 20:07:26 CET"  "2014-04-08 20:05:00 CEST"
 #> [79] "2014-04-08 20:05:00 CEST" "2014-04-02 03:00:51 CEST"
 #> [81] "2014-04-02 03:00:51 CEST" "2012-03-19 10:11:59 CET" 
-#> [83] "2012-03-19 09:11:59 CET"  "2014-03-31 07:10:06 CEST"
-#> [85] "2014-03-31 07:10:06 CEST" "2014-03-31 07:10:06 CEST"
-#> [87] "2014-03-31 07:10:06 CEST" "1971-08-21 08:10:06 CET" 
-#> [89] "2014-03-30 07:10:06 CEST" "2014-03-01 08:10:06 CET" 
+#> [83] "2012-03-19 09:11:59 CET"  "2014-03-31 19:07:26 CEST"
+#> [85] "2014-03-31 19:07:26 CEST" "2014-03-31 19:07:26 CEST"
+#> [87] "2014-03-31 19:07:26 CEST" "1971-08-21 20:07:26 CET" 
+#> [89] "2014-03-30 19:07:26 CEST" "2014-03-16 20:07:26 CET" 
 #> [91] "2017-11-13 13:14:20 CET"  "2014-04-08 09:25:18 CEST"
-#> [93] "2014-04-08 07:10:06 CEST"
+#> [93] "2014-04-08 19:07:26 CEST"
 ```
 
 ## Functions
@@ -154,13 +158,13 @@ chronos(bench_date, out_format = "datetime")
 Under the hood `chronos()` calls three functions which can also be used
 in isolation:
 
--   `parse_datetime()`: a fast datetime parser that tries several
-    different formats until it can parse the input
+- `parse_datetime()`: a fast datetime parser that tries several
+  different formats until it can parse the input
 
--   `parse_date()`: a fast date parser that tries several different
-    formats until it can parse the input
+- `parse_date()`: a fast date parser that tries several different
+  formats until it can parse the input
 
--   `parse_epoch()`: a fast-ish epoch timestamp parser
+- `parse_epoch()`: a fast-ish epoch timestamp parser
 
 ## other packages
 
@@ -177,7 +181,7 @@ sum_na(dplyr::coalesce(
     anytime::anytime(bench_date),
     anytime::anydate(bench_date)
 )) / length(bench_date)
-#> [1] 0.215054
+#> [1] 0.2150538
 ```
 
 The list of formats supported out-of-the-box can be retrieved with
@@ -192,13 +196,13 @@ microbenchmark::microbenchmark(
     chronos(bench_date),
     anytime::anytime(bench_date)
 )
-#> Unit: microseconds
-#>                          expr       min        lq    mean  median       uq
-#>           chronos(bench_date)   904.542   998.899  1124.3  1092.1  1194.86
-#>  anytime::anytime(bench_date) 30476.336 33626.440 34864.2 34598.4 36266.49
+#> Unit: milliseconds
+#>                          expr       min        lq      mean    median        uq
+#>           chronos(bench_date)  1.538591  1.607271  1.734865  1.682819  1.811504
+#>  anytime::anytime(bench_date) 45.582038 46.085446 48.846431 47.659737 50.206716
 #>       max neval
-#>   1941.77   100
-#>  47343.03   100
+#>   2.92079   100
+#>  71.28260   100
 ```
 
 See [this
