@@ -24,4 +24,4 @@ LazyData: true
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-SystemRequirements: Cargo (Rust's package manager), rustc >= 1.67.1
+SystemRequirements: Cargo (Rust's package manager), rustc (>= 1.67.1)
