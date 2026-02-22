@@ -1,6 +1,8 @@
-use chrono::{NaiveDate, NaiveDateTime};
+use chrono::{DateTime, NaiveDate, NaiveDateTime};
 use dateparser::DateTimeUtc;
 use extendr_api::prelude::*;
+
+const NOT_FOUND: &str = "not found";
 
 #[extendr]
 fn parse_guess_rs(times: Vec<String>) -> Vec<String> {
@@ -9,11 +11,9 @@ fn parse_guess_rs(times: Vec<String>) -> Vec<String> {
         .map(|input| match input.parse::<DateTimeUtc>() {
             Ok(value) => value
                 .0
-                //.with_timezone(&Local)
-                // .with_timezone(&Utc)
                 .format("%Y-%m-%d %H:%M:%S")
                 .to_string(),
-            Err(_e) => "not found".to_string(),
+            Err(_) => NOT_FOUND.to_string(),
         })
         .collect()
 }
@@ -28,7 +28,7 @@ fn parse_datetime_rs(times: Vec<String>, formats: Vec<String>, out_format: &str)
                     return naive_date.format(out_format).to_string();
                 }
             }
-            "not found".to_string()
+            NOT_FOUND.to_string()
         })
         .collect()
 }
@@ -39,11 +39,12 @@ fn parse_date_rs(times: Vec<String>, formats: Vec<String>, out_format: &str) -> 
         .map(|time_str| {
             for fmt in &formats {
                 if let Ok(date) = NaiveDate::parse_from_str(time_str, fmt) {
-                    let naive_datetime = date.and_hms_milli_opt(0, 0, 0, 0).unwrap();
-                    return naive_datetime.format(out_format).to_string();
+                    if let Some(naive_datetime) = date.and_hms_milli_opt(0, 0, 0, 0) {
+                        return naive_datetime.format(out_format).to_string();
+                    }
                 }
             }
-            "not found".to_string()
+            NOT_FOUND.to_string()
         })
         .collect()
 }
@@ -54,10 +55,11 @@ fn parse_epoch_rs(times: Vec<String>, out_format: &str) -> Vec<String> {
         .iter()
         .map(|time_str| {
             if let Ok(epoch_seconds) = time_str.parse::<i64>() {
-                let naive_date_time = NaiveDateTime::from_timestamp_opt(epoch_seconds, 0).unwrap();
-                return naive_date_time.format(out_format).to_string();
+                if let Some(dt) = DateTime::from_timestamp(epoch_seconds, 0) {
+                    return dt.format(out_format).to_string();
+                }
             }
-            "not found".to_string()
+            NOT_FOUND.to_string()
         })
         .collect()
 }
@@ -67,8 +69,9 @@ fn parse_epoch_i64_rs(times: Vec<i32>, out_format: &str) -> Vec<String> {
     times
         .iter()
         .map(|&epoch| {
-            let naive_date_time = NaiveDateTime::from_timestamp_opt(epoch.into(), 0).unwrap();
-            naive_date_time.format(out_format).to_string()
+            DateTime::from_timestamp(epoch.into(), 0)
+                .map(|dt| dt.format(out_format).to_string())
+                .unwrap_or_else(|| NOT_FOUND.to_string())
         })
         .collect()
 }
