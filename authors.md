@@ -30,12 +30,12 @@ Source:
 [`DESCRIPTION`](https://github.com/schochastics/timeless/blob/main/DESCRIPTION)
 
 Schoch D (2026). *timeless: Fast General Purpose Date/Time Converter*. R
-package version 0.2.4.9000, <https://github.com/schochastics/timeless>.
+package version 0.2.4.9001, <https://github.com/schochastics/timeless>.
 
     @Manual{,
       title = {timeless: Fast General Purpose Date/Time Converter},
       author = {David Schoch},
       year = {2026},
-      note = {R package version 0.2.4.9000},
+      note = {R package version 0.2.4.9001},
       url = {https://github.com/schochastics/timeless},
     }
