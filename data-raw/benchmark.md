@@ -62,6 +62,16 @@ data.frame(
 )
 ```
 
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '12:00 AM December 26, 2000' resulted in 'NA'
+    results.
+
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+
            type chronos anytime
     1 datetimes       0     322
     2    epochs       0       0
@@ -98,8 +108,223 @@ mb <- microbenchmark::microbenchmark(
     anytime = anytime(bench),
     times = 100L
 )
+```
+
+    Warning in microbenchmark::microbenchmark(chronos = chronos(bench),
+    fast_chronos = fast_chronos(bench), : less accurate nanosecond times to avoid
+    potential integer overflows
+
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+
+``` r
 ggplot2::autoplot(mb)
 ```
+
+    Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
+    ℹ Please use tidy evaluation idioms with `aes()`.
+    ℹ See also `vignette("ggplot2-in-packages")` for more information.
+    ℹ The deprecated feature was likely used in the microbenchmark package.
+      Please report the issue at
+      <https://github.com/joshuaulrich/microbenchmark/issues/>.
 
 ![](benchmark_files/figure-commonmark/bench_all-1.png)
 
@@ -112,6 +337,210 @@ mb <- microbenchmark::microbenchmark(
     anytime = anytime(bench_datetimes),
     times = 100L
 )
+```
+
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+    Warning in anytime_cpp(x, tz = tz, asUTC = asUTC, asDate = FALSE, useR = useR,
+    : Input conversion of '28 December 1979 12:54AM' resulted in 'NA' results.
+
+``` r
 ggplot2::autoplot(mb)
 ```
 
@@ -146,6 +575,210 @@ mb <- microbenchmark::microbenchmark(
     anytime = anydate(bench_date),
     times = 100L
 )
+```
+
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+    Warning in anytime_cpp(x = x, tz = tz, asUTC = asUTC, asDate = TRUE, useR =
+    useR, : Input conversion of '1511-64-85 ' resulted in 'NA' results.
+
+``` r
 ggplot2::autoplot(mb)
 ```
 
