@@ -2,7 +2,7 @@
     return(as.POSIXct(x, tz, format = "%Y-%m-%d %H:%M:%S"))
 }
 
-.char2date <- function(x, use_fasttime = FALSE) {
+.char2date <- function(x) {
     return(as.Date(x))
 }
 
