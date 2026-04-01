@@ -4,12 +4,6 @@ Version: 0.2.4.9001
 Authors@R: 
     c(person("David", "Schoch", , "david@schochastics.net", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2952-4812")),
-      person("Rollie", "Ma", role = c("ctb", "cph"),comment = "author of dateparser : <https://github.com/waltzofpearls/dateparser>"),
-      person("Brandon W.", "Maister", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
-      person("Dirkjan", "Ochtman", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
-      person("Seonghoon", "Kang", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
-      person("Eric", "Sheppard", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
-      person("Paul", "Dicker", role = c("ctb", "cph"),comment = "author of chrono : <https://github.com/chronotope/chrono>"),
       person("Authors of vendored Rust crates", role = "cph",
            comment = "see inst/AUTHORS file"))
 Description: Fast general purpose date/time converter using 'Rust'. The package implements date time, date and epoch time parser for heterogeneous vectors of dates.
