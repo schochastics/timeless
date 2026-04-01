@@ -9,11 +9,12 @@ $(SHLIB): $(STATLIB)
 
 CRAN_FLAGS=-j 2
 CARGOTMP = $(CURDIR)/.cargo
-VENDOR_DIR = $(CURDIR)/vendor
+VENDOR_DIR = $(CURDIR)/rust/vendor
 
 $(STATLIB):
 	if [ -f ./rust/vendor.tar.xz ]; then \
-		tar xf rust/vendor.tar.xz && \
+		mkdir -p $(VENDOR_DIR) && \
+		$(TAR) xf rust/vendor.tar.xz -C $(VENDOR_DIR) && \
 		mkdir -p $(CARGOTMP) && \
 		cp rust/vendor-config.toml $(CARGOTMP)/config.toml; \
 	fi

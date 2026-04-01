@@ -8,4 +8,5 @@ README.html
 docs
 data-raw/benchmark.tsv
 src/rust/vendor
+src/rust/vendor.tar.xz
 CRAN-SUBMISSION
