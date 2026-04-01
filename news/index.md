@@ -1,8 +1,10 @@
 # Changelog
 
-## timeless 0.2.4.9000
+## timeless 0.3.0
 
 - added more formats supporting subseconds
+- refactored rust code
+- make the package cran compliant
 
 ## timeless 0.2.4
 
