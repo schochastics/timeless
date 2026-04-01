@@ -5,25 +5,6 @@
 - **David Schoch**. Author, maintainer.
   [](https://orcid.org/0000-0003-2952-4812)
 
-- **Rollie Ma**. Contributor, copyright holder.  
-  author of dateparser :
-  \<<https://github.com/waltzofpearls/dateparser>\>
-
-- **Brandon W. Maister**. Contributor, copyright holder.  
-  author of chrono : \<<https://github.com/chronotope/chrono>\>
-
-- **Dirkjan Ochtman**. Contributor, copyright holder.  
-  author of chrono : \<<https://github.com/chronotope/chrono>\>
-
-- **Seonghoon Kang**. Contributor, copyright holder.  
-  author of chrono : \<<https://github.com/chronotope/chrono>\>
-
-- **Eric Sheppard**. Contributor, copyright holder.  
-  author of chrono : \<<https://github.com/chronotope/chrono>\>
-
-- **Paul Dicker**. Contributor, copyright holder.  
-  author of chrono : \<<https://github.com/chronotope/chrono>\>
-
 - **Authors of vendored Rust crates**. Copyright holder.  
   see inst/AUTHORS file
 
