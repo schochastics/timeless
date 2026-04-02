@@ -14,6 +14,6 @@ test_that("chronos works with supported formats", {
 })
 
 test_that("timezone conversion #14", {
-    res <- chronos(bench_date[5], tz = "CET", to_tz = "UTC")
+    res <- chronos(bench_date[5], tz = "Europe/Berlin", to_tz = "UTC")
     expect_equal(res, as.POSIXct("2017-11-25 21:34:50", tz = "UTC"))
 })

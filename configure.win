@@ -3,6 +3,11 @@
 # https://github.com/eitsupi/prqlr/blob/main/configure.win
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Report rustc version for CRAN
+if [ "$(command -v rustc)" ]; then
+    echo "Using Rust compiler version: $(rustc --version)"
+fi
+
 if [ ! "$(command -v cargo)" ]; then
     echo "----------------------- [RUST NOT FOUND]---------------------------"
     echo "The 'cargo' command was not found on the PATH. Please install rustc"
@@ -10,11 +15,6 @@ if [ ! "$(command -v cargo)" ]; then
     echo "-------------------------------------------------------------------"
     echo ""
     exit 1
-fi
-
-# Report rustc version for CRAN
-if [ "$(command -v rustc)" ]; then
-    echo "Using Rust compiler version: $(rustc --version)"
 fi
 
 exit 0
