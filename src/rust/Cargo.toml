@@ -13,3 +13,7 @@ extendr-api = '0.8'
 dateparser = '0.2'
 chrono = '0.4'
 rayon = '1.10'
+
+[profile.release]
+panic = "abort"
+lto = true

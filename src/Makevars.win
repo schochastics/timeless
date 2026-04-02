@@ -5,7 +5,7 @@ LIBDIR = $(TARGET_DIR)/$(TARGET)/release
 STATLIB = $(LIBDIR)/libtimeless.a
 PKG_LIBS = -L$(LIBDIR) -ltimeless -lws2_32 -ladvapi32 -luserenv -lbcrypt -lntdll
 
-all: C_clean
+all: $(SHLIB) rust_clean
 
 $(SHLIB): $(STATLIB)
 
@@ -41,8 +41,8 @@ $(STATLIB):
 		rm -Rf $(CARGOTMP) $(VENDOR_DIR) $(LIBDIR)/build; \
 	fi
 
-C_clean:
-	rm -Rf $(SHLIB) $(STATLIB) $(OBJECTS) $(CARGOTMP) $(VENDOR_DIR)
+rust_clean: $(SHLIB)
+	rm -Rf $(CARGOTMP) $(VENDOR_DIR) $(TARGET_DIR)
 
 clean:
-	rm -Rf $(SHLIB) $(STATLIB) $(OBJECTS) $(CARGOTMP) $(VENDOR_DIR) $(TARGET_DIR)
+	rm -Rf $(SHLIB) $(STATLIB) $(OBJECTS) $(TARGET_DIR)

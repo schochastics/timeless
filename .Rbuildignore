@@ -11,3 +11,4 @@ README.html
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
 ^src/rust/vendor$
+^\.claude$

@@ -3,7 +3,7 @@ LIBDIR = $(TARGET_DIR)/release
 STATLIB = $(LIBDIR)/libtimeless.a
 PKG_LIBS = -L$(LIBDIR) -ltimeless
 
-all: C_clean
+all: $(SHLIB) rust_clean
 
 $(SHLIB): $(STATLIB)
 
@@ -30,8 +30,8 @@ $(STATLIB):
 			echo `cargo --version` && echo `rustc --version`;
 		rm -Rf $(CARGOTMP) $(VENDOR_DIR) $(LIBDIR)/build; \
 
-C_clean:
-	rm -Rf $(SHLIB) $(STATLIB) $(OBJECTS) $(CARGOTMP) $(VENDOR_DIR)
+rust_clean: $(SHLIB)
+	rm -Rf $(CARGOTMP) $(VENDOR_DIR) $(TARGET_DIR)
 
 clean:
-	rm -Rf $(SHLIB) $(STATLIB) $(OBJECTS) $(CARGOTMP) $(VENDOR_DIR) $(TARGET_DIR)
+	rm -Rf $(SHLIB) $(STATLIB) $(OBJECTS) $(TARGET_DIR)
